@@ -42,6 +42,11 @@
 <!--            <artifactId>mysql-connector-java</artifactId>-->
 <!--            <scope>runtime</scope>-->
 <!--        </dependency>-->
+        <!--添加Thymeleaf起步依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 
         <!-- Redis 依赖，用于集成 Redis 功能 -->
         <dependency>

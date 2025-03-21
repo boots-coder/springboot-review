@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<!-- 引入thymeleaf命名空间，方便使用thymeleaf属性 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf入门</title>
+</head>
+<body>
+<!-- 静态页面显示数据，动态页面使用后端传来的msg数据代替 -->
+<!-- thymeleaf支持el表达式 -->
+<h2 th:text="${msg}">hello，bootscoder</h2>
+</body>
+</html>

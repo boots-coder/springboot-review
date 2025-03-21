@@ -28,12 +28,12 @@ server:
 #      allowed-methods: "*"
 #      allowed-headers: "*"
 #
-#logging:
-#  level:
-#    root: info
-#    com.example: debug   # 替换为你的包名
-#  pattern:
-#    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+logging:
+  level:
+    root: info
+    com.example: debug   # 替换为你的包名
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
 
 # 自定义springboot yml配置
