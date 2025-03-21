@@ -1,0 +1,54 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /bootscoder  # 所有接口前缀为 /bootscoder
+
+
+
+# 数据库的相关配置
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/your_database_name?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+#    username: root
+#    password: your_password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  redis:
+#    host: localhost
+#    port: 6379
+#    timeout: 5000
+
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: Asia/Shanghai
+#
+#  mvc:
+#    cors:
+#      allowed-origins: "*"
+#      allowed-methods: "*"
+#      allowed-headers: "*"
+#
+#logging:
+#  level:
+#    root: info
+#    com.example: debug   # 替换为你的包名
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+
+# 自定义springboot yml配置
+#定义一个对象
+connectionInfo:
+  email: 3552618816@qq.com
+  wechat: Tsing0521
+
+myconfig:
+    moreAdvanceProfile:
+      internship:
+        - ChanJet-java-dataDepartment
+        - YUNJie-backend-leader
+      selfProject:
+        - name: shopping
+          tech: springboot+redis+mysql
+        - name: PropertyManagementSystem
+          tech: fastDFS
