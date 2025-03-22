@@ -1,0 +1,189 @@
+21:57:26.463 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+21:57:26.479 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.11 with PID 61544 (/Users/bootscoder/Downloads/redispractice/demo/target/classes started by bootscoder in /Users/bootscoder/Downloads/redispractice/demo)
+21:57:26.479 [main] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+21:57:26.479 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+21:57:26.835 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+21:57:26.837 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+21:57:26.845 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+21:57:27.050 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9999 (http)
+21:57:27.054 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9999"]
+21:57:27.055 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+21:57:27.055 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+21:57:27.072 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring embedded WebApplicationContext
+21:57:27.072 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 579 ms
+21:57:27.303 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+21:57:27.509 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+21:57:27.531 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9999"]
+21:57:27.538 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9999 (http) with context path '/bootscoder'
+21:57:27.548 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 1.208 seconds (process running for 1.433)
+21:57:27.931 [RMI TCP Connection(3)-192.168.1.3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+21:57:27.931 [RMI TCP Connection(2)-192.168.1.3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+21:57:27.931 [RMI TCP Connection(3)-192.168.1.3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+21:57:27.932 [RMI TCP Connection(3)-192.168.1.3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+21:57:33.843 [RMI TCP Connection(2)-192.168.1.3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5cda25d6
+21:57:33.863 [RMI TCP Connection(2)-192.168.1.3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+21:58:01.481 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+21:58:01.504 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+21:58:01.997 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+21:59:01.487 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+21:59:01.489 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+21:59:01.953 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:00:01.456 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:00:01.458 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:00:02.449 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:01:01.450 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:01:01.451 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:01:01.915 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:02:01.458 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:02:01.460 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:02:01.919 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:03:01.470 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:03:01.474 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:03:01.949 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:04:02.054 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:04:02.055 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:04:02.539 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:05:01.466 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:05:01.469 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:05:02.483 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:06:01.461 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:06:01.464 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:06:01.941 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:06:39.250 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22:06:41.264 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+22:06:41.396 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+22:06:41.403 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+22:06:42.908 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+22:06:42.924 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.11 with PID 61832 (/Users/bootscoder/Downloads/redispractice/demo/target/classes started by bootscoder in /Users/bootscoder/Downloads/redispractice/demo)
+22:06:42.924 [main] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+22:06:42.924 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+22:06:43.232 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+22:06:43.233 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:06:43.241 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+22:06:43.437 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9999 (http)
+22:06:43.442 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9999"]
+22:06:43.442 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22:06:43.442 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+22:06:43.459 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring embedded WebApplicationContext
+22:06:43.459 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 523 ms
+22:06:43.673 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+22:06:43.869 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+22:06:43.890 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9999"]
+22:06:43.896 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9999 (http) with context path '/bootscoder'
+22:06:43.905 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 1.115 seconds (process running for 1.335)
+22:06:44.325 [RMI TCP Connection(3)-192.168.1.3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:06:44.325 [RMI TCP Connection(2)-192.168.1.3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+22:06:44.326 [RMI TCP Connection(3)-192.168.1.3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:06:44.327 [RMI TCP Connection(3)-192.168.1.3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+22:06:50.030 [RMI TCP Connection(2)-192.168.1.3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f8f9f55
+22:06:50.035 [RMI TCP Connection(2)-192.168.1.3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+22:07:01.481 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:07:01.502 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:07:02.022 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:07:04.073 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:08:01.493 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:08:01.496 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:08:01.985 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:08:03.652 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:09:01.479 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:09:01.481 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:09:01.963 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:09:03.546 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:10:01.461 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:10:01.465 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:10:01.956 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:10:03.832 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:10:47.418 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.mapper.UserMapperTest]: UserMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:10:47.458 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.mapper.UserMapperTest
+22:10:47.593 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+22:10:47.607 [main] INFO  com.example.demo.mapper.UserMapperTest - Starting UserMapperTest using Java 17.0.11 with PID 61909 (started by bootscoder in /Users/bootscoder/Downloads/redispractice/demo)
+22:10:47.607 [main] DEBUG com.example.demo.mapper.UserMapperTest - Running with Spring Boot v3.4.4, Spring v6.2.5
+22:10:47.608 [main] INFO  com.example.demo.mapper.UserMapperTest - No active profile set, falling back to 1 default profile: "default"
+22:10:47.968 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+22:10:47.970 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:10:47.981 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+22:10:48.394 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+22:10:48.646 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+22:10:48.684 [main] INFO  com.example.demo.mapper.UserMapperTest - Started UserMapperTest in 1.18 seconds (process running for 1.586)
+22:10:49.024 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+22:10:55.192 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64641998
+22:10:55.200 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+22:10:55.212 [main] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:10:55.230 [main] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:10:55.720 [main] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:10:55.744 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:10:55.753 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+22:10:55.888 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+22:10:59.840 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+22:11:01.638 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:11:01.639 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:11:02.139 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:11:03.821 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:11:08.795 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+22:11:08.822 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 17.0.11 with PID 61922 (/Users/bootscoder/Downloads/redispractice/demo/target/demo-0.0.1-SNAPSHOT.jar started by bootscoder in /Users/bootscoder/Downloads/redispractice/demo)
+22:11:08.823 [main] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+22:11:08.823 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+22:11:09.282 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+22:11:09.284 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:11:09.295 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+22:11:09.570 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9999 (http)
+22:11:09.576 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9999"]
+22:11:09.577 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22:11:09.577 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+22:11:09.590 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring embedded WebApplicationContext
+22:11:09.590 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 746 ms
+22:11:09.963 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+22:11:10.233 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+22:11:10.257 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9999"]
+22:11:10.373 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+22:11:10.385 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+22:11:10.391 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9999 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9999 or configure this application to listen on another port.
+
+22:11:13.637 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22:11:18.463 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+22:11:18.489 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 17.0.11 with PID 61930 (/Users/bootscoder/Downloads/redispractice/demo/target/demo-0.0.1-SNAPSHOT.jar started by bootscoder in /Users/bootscoder/Downloads/redispractice/demo)
+22:11:18.489 [main] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+22:11:18.490 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+22:11:18.928 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+22:11:18.929 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:11:18.938 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+22:11:19.198 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9999 (http)
+22:11:19.204 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9999"]
+22:11:19.205 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22:11:19.205 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+22:11:19.217 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring embedded WebApplicationContext
+22:11:19.218 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 707 ms
+22:11:19.534 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+22:11:19.780 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+22:11:19.802 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9999"]
+22:11:19.813 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9999 (http) with context path '/bootscoder'
+22:11:19.823 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 1.506 seconds (process running for 1.807)
+22:11:26.178 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/bootscoder] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:11:26.178 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:11:26.179 [http-nio-9999-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22:12:01.035 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+22:12:06.972 [scheduling-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@486434db
+22:12:06.979 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+22:12:06.991 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:12:07.011 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:12:07.531 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:12:09.734 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:13:01.471 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==>  Preparing: select * from users
+22:13:01.473 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - ==> Parameters: 
+22:13:01.946 [scheduling-1] DEBUG com.example.demo.mapper.UserMapper.findAll - <==      Total: 23
+22:13:03.405 [scheduling-1] INFO  com.example.demo.scheduleTask.RedisFlushTask - 成功将 MySQL 中的用户数据存入 Redis
+22:13:42.249 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete

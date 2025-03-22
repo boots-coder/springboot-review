@@ -1,6 +1,7 @@
+
 # springboot 和springboot3
 
-![image-20250321145204538](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250321145204538.png)
+![](https://i-blog.csdnimg.cn/img_convert/f3263130a59d626fd8679d9d0fbdca95.png)
 
 
 
@@ -35,7 +36,7 @@ spring -- 事务 和MVC 的相关配置 -- 默认配置
 
 版本支持要求
 
-![image-20250321150944164](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250321150944164.png)
+![image-20250321150944164](https://i-blog.csdnimg.cn/img_convert/e104e50b56961de0ddd60c265a4f14a8.png)
 
 
 
@@ -51,7 +52,7 @@ https://start.spring.io/
 
 这里注意一下： 国外大多数使用Gradile -- 进行项目管理
 
-![image-20250321152141082](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250321152141082.png)
+![image-20250321152141082](https://i-blog.csdnimg.cn/img_convert/9817618d59b8330d78af3a41d8de3ff2.png)
 
 
 
@@ -128,7 +129,7 @@ SpringBoot入门_通过Maven搭建项目
 
 1. 创建新项目
 
-   ![image-20230803113459684](https://www.itbaizhan.com/wiki/imgs/image-20230803113459684.png)
+   ![image-20230803113459684](https://i-blog.csdnimg.cn/img_convert/15b63471bc0bc10f2c90838079ce7b06.png)
 
 2. 在pom中添加项目的父工程、起步依赖、插件、依赖和插件的下载地址
 
@@ -307,7 +308,7 @@ https://docs.spring.io/spring-boot/docs/3.1.2/reference/htmlsingle/#appendix.app
 
 以server port 为例
 
-![image-20250321191358747](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250321191358747.png)
+![image-20250321191358747](https://i-blog.csdnimg.cn/img_convert/cd687db3c2d7cfaaffba1b9f36714ebf.png)
 
 
 
@@ -439,9 +440,9 @@ public class MyController {
 
 图画解释：
 
-![image-20250321234420466](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250321234420466.png)
+![image-20250321234420466](https://i-blog.csdnimg.cn/img_convert/b6f915dc247936e0606a87002d80cd4b.png)
 
-![image-20250321234613489](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250321234613489.png)
+![image-20250321234613489](https://i-blog.csdnimg.cn/img_convert/652d4cd7526cad96b41aaa1d28505b9e.png)
 
 
 
@@ -679,7 +680,7 @@ bootstrap与application的应用场景
 
 
 
-![image-20250322004940715](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250322004940715.png)
+![image-20250322004940715](https://i-blog.csdnimg.cn/img_convert/a9988d0aeb93c83d6a99ee9d6713d59b.png)
 
 可能需要引入第三方的验证码组件；之前使用web.xml文件进行注解；
 
@@ -842,11 +843,11 @@ SpringBoot项目中没有WebApp目录，只有src目录。在`src/main/resources
 
 2. 将webapp标记为web目录
 
-   ![image-20230816174101492](https://www.itbaizhan.com/wiki/imgs/image-20230816174101492.png)
+   ![image-20230816174101492](https://i-blog.csdnimg.cn/img_convert/15e568425b0c3c2645b25413832960fd.png)
 
 3. 创建webapp目录，编写JSP文件
 
-   ![image-20230816174122877](https://www.itbaizhan.com/wiki/imgs/image-20230816174122877.png)
+   ![image-20230816174122877](https://i-blog.csdnimg.cn/img_convert/949ae32a6b456046bf55c3296edc4e7b.png)
 
    ```
    1<%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -896,7 +897,7 @@ SpringBoot项目中没有WebApp目录，只有src目录。在`src/main/resources
 
 
 
-![image-20250322020533685](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250322020533685.png)
+![image-20250322020533685](https://i-blog.csdnimg.cn/img_convert/97048d28838ba1ce842b750f80c6f4fc.png)
 
 
 
@@ -1012,7 +1013,7 @@ input 一般就是表单；
 
 ## 19 Thymeleaf_条件判断
 
-![image-20211021115534302](https://www.itbaizhan.com/wiki/imgs/image-20211021115534302.png)
+![image-20211021115534302](https://i-blog.csdnimg.cn/img_convert/09564249fae68832ef089670bf921df9.png)
 
 | 语法  | 作用     |
 | ----- | -------- |
@@ -1581,7 +1582,7 @@ COMMENT='用户表，包含基本信息及营销等级';
 
 ## 提出一个问题， 如何选择合适的依赖版本？ 并且管理依赖
 
-![image-20250322164537849](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250322164537849.png)
+![image-20250322164537849](https://i-blog.csdnimg.cn/img_convert/d30678409af048b3fb5d7fc85e1e9bf6.png)
 
 
 
@@ -1610,8 +1611,8 @@ COMMENT='用户表，包含基本信息及营销等级';
 - **继承 `spring-boot-starter-parent` 或使用 Spring Boot 的 BOM**
   Spring Boot 的父 POM 或 BOM（Bill of Materials）会统一管理常见依赖的版本，如 Spring 框架、Hibernate、数据库驱动（比如 MySQL Connector）等。这意味着：
 
-    - 你在 POM 中添加依赖时通常可以省略版本号，因为已由 Spring Boot 统一管理。
-    - 当你升级 Spring Boot 版本时，相关依赖的版本也随之更新，降低了冲突的风险。
+   - 你在 POM 中添加依赖时通常可以省略版本号，因为已由 Spring Boot 统一管理。
+   - 当你升级 Spring Boot 版本时，相关依赖的版本也随之更新，降低了冲突的风险。
 
 - **示例 Maven 配置**
 
@@ -1648,9 +1649,9 @@ COMMENT='用户表，包含基本信息及营销等级';
   同时，阅读对应依赖的官方文档和 Release Notes 来确认该版本是否适用于你的项目环境和 Java 版本。
 - **检查传递性依赖关系**
   使用 Maven 的 `mvn dependency:tree` 命令或 Gradle 的 `gradle dependencies` 任务查看所有依赖及其版本，这样可以判断：
-    - 某个依赖是否由 Spring Boot Starter 自动引入；
-    - 是否存在多个版本冲突的情况；
-    - 是否需要在 `<dependencyManagement>` 中显式覆盖默认版本。
+   - 某个依赖是否由 Spring Boot Starter 自动引入；
+   - 是否存在多个版本冲突的情况；
+   - 是否需要在 `<dependencyManagement>` 中显式覆盖默认版本。
 
 ------
 
@@ -1691,6 +1692,7 @@ Command + shift +T --- 创建单元测试快捷键
 核心注解： @SpringBootTest
 
 ```
+
 @SpringBootTest// 可以在测试代码时候加载容器，必须加
 class UserMapperTest {
 
@@ -1727,13 +1729,13 @@ class UserMapperTest {
 
    点击`File-->Settings-->Compiler`
 
-   ![image-20230807154159257](https://www.itbaizhan.com/wiki/imgs/image-20230807154159257.png)
+   ![image-20230807154159257](https://i-blog.csdnimg.cn/img_convert/6c3326c874b714434f7d8e87ca7bddb2.png)
 
 3. 开启允许在运行中修改文件
 
    点击`File-->Settings-->Advanced Settings`，勾选`Allow auto-make to start even if developed application is currently running`
 
-   ![image-20230807155349721](https://www.itbaizhan.com/wiki/imgs/image-20230807155349721.png)
+   ![image-20230807155349721](https://i-blog.csdnimg.cn/img_convert/7c5024f27acfa2228cad68c5a5650d43.png)
 
 此时热部署即可生效
 
@@ -1787,8 +1789,8 @@ class UserMapperTest {
 
 1. **已知条件**
 
-    - 23 个用户数据占用约 6 KB 内存
-    - 1 个用户数据占用的内存 ≈ 6 KB / 23 ≈ 0.26087 KB
+   - 23 个用户数据占用约 6 KB 内存
+   - 1 个用户数据占用的内存 ≈ 6 KB / 23 ≈ 0.26087 KB
 
 2. **计算 500 万（5,000,000）个用户数据所需内存**
 
@@ -1796,11 +1798,11 @@ class UserMapperTest {
 
 3. **单位转换**
 
-    - 将 KB 转换为 MB（假设 1MB = 1024 KB）：
+   - 将 KB 转换为 MB（假设 1MB = 1024 KB）：
 
-      $\text{内存 (MB)} ≈ \frac{1\,304\,347.8\text{KB}}{1024} ≈ 1\,274 \text{MB}$
+     $\text{内存 (MB)} ≈ \frac{1\,304\,347.8\text{KB}}{1024} ≈ 1\,274 \text{MB}$
 
-    - 或者大约 1.27 GB（1GB ≈ 1024 MB）
+   - 或者大约 1.27 GB（1GB ≈ 1024 MB）
 
 因此，大约需要 **1.3GB 内存** 来存储 500 万用户数据。
 注意：实际内存占用会受到 Redis 内部管理数据结构、对象头信息和其他额外数据的影响，上述计算只是一种粗略估算。
@@ -1813,7 +1815,7 @@ class UserMapperTest {
 
 ### 基于请求头修改返回数据格式
 
-![image-20230807160753513](https://www.itbaizhan.com/wiki/imgs/image-20230807160753513.png)
+![image-20230807160753513](https://i-blog.csdnimg.cn/img_convert/c0836b5956c7234362c1dafa6e8501c1.png)
 
 如果我们的Java服务为浏览器和安卓手机同时提供服务，浏览器期望接受的请求是JSON格式，安卓客户端期望接收的请求是XML格式，这个时候是否需要写两个方法？
 
@@ -1853,9 +1855,9 @@ Spring默认支持内容协商机制，但SpringBoot默认只支持返回Json数
 
 3. 进行测试，SpringBoot的内容协商机制是根据请求头不同，返回不同格式的数据，所以需要我们能够修改请求头，我们使用postman进行测试：
 
-   ![image-20230807162522810](https://www.itbaizhan.com/wiki/imgs/image-20230807162522810.png)
+   ![image-20230807162522810](https://i-blog.csdnimg.cn/img_convert/6d07df224fc66d94b6a59b0c588d9359.png)
 
-   ![image-20230807162620597](https://www.itbaizhan.com/wiki/imgs/image-20230807162620597.png)
+   ![image-20230807162620597](https://i-blog.csdnimg.cn/img_convert/8b581ad7f87a29726e489acb5e2aba73.png)
 
 
 
@@ -1874,9 +1876,9 @@ SpringBoot默认根据请求头不同，返回不同的数据格式。我们还�
 
 2. 在postman进行测试：
 
-   ![image-20230807163615357](https://www.itbaizhan.com/wiki/imgs/image-20230807163615357.png)
+   ![image-20230807163615357](https://i-blog.csdnimg.cn/img_convert/c448240beaff9f7e88d77441dec0d8a6.png)
 
-   ![image-20230807163644442](https://www.itbaizhan.com/wiki/imgs/image-20230807163644442.png)
+   ![image-20230807163644442](https://i-blog.csdnimg.cn/img_convert/d697d74fbe28c8ba07b646d06ce617a1.png)
 
 
 
@@ -1901,7 +1903,7 @@ SpringBoot国际化资源文件的文件名规范为：基本名_语言代码_�
 - messages_en_US.properties：美国英语时生效
 - messages_zh_CN.properties：中文时生效
 
-![image-20230807173716552](https://www.itbaizhan.com/wiki/imgs/image-20230807173716552.png)
+![image-20230807173716552](https://i-blog.csdnimg.cn/img_convert/a3ccaac53a79f2118eaf79e7766b817c.png)
 
 编写三个文件：
 
@@ -1920,7 +1922,7 @@ SpringBoot国际化资源文件的文件名规范为：基本名_语言代码_�
 
 > 注意，这里要将项目配置文件的编码方式改成UTF-8，否则会出现乱码
 >
-> ![image-20230807173935519](https://www.itbaizhan.com/wiki/imgs/image-20230807173935519.png)
+> ![image-20230807173935519](https://i-blog.csdnimg.cn/img_convert/dac1773db3077e45de58c0795b9f44ed.png)
 
 ### 2、在配置文件指定国际资源文件的基本名
 
@@ -1960,7 +1962,7 @@ SpringBoot国际化资源文件的文件名规范为：基本名_语言代码_�
 
 先在默认情况下访问`/welcome`，之后切换浏览器环境，再次访问`/welcome`
 
-![image-20230807174122875](https://www.itbaizhan.com/wiki/imgs/image-20230807174122875.png)
+![image-20230807174122875](https://i-blog.csdnimg.cn/img_convert/d66f40e3ecc7203a6839898818602708.png)
 
 在 Spring Boot 中进行国际化时，默认约定的资源文件名是基于 Java 标准的 ResourceBundle 的命名规则。例如：
 
@@ -2021,13 +2023,1189 @@ spring:
 
 
 
+## 32 SpringBoot参数校验_
+
+### 简单数据类型
+
+![image-20250322191026281](https://i-blog.csdnimg.cn/img_convert/58a13d4708146706132becbdd702f5fc.png)
 
 
-## 32 SpringBoot参数校验_简单数据类型
 
-![image-20250322191026281](https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20250322191026281.png)
+SpringBoot自带了validation工具可以从后端对前端传来的参数进行校验，用法如下：
+
+核心注解：
+
+@Validation
+
+1. 引入`validation`起步依赖
+
+   ```
+   1<!-- 参数校验 -->
+   2<dependency>
+   3  <groupId>org.springframework.boot</groupId>
+   4  <artifactId>spring-boot-starter-validation</artifactId>
+   5</dependency>
+   ```
+
+2. 编写Controller
+
+   ```
+   1// 该控制器开启参数校验
+   2@Validated
+   3@Controller
+   4public class TestController {
+   5  @RequestMapping("/t1")
+   6  @ResponseBody
+   7  // 在参数前加校验注解，该注解的意思是字符串参数不能为null
+   8  public String t1(@NotBlank String username){
+   9    System.out.println(username);
+   10    return "请求成功！";
+   11   }
+   12}
+   ```
+
+3. 访问http://localhost:8080/t1，发现当没有传来参数时，会抛出`ConstraintViolationException`异常。
+
+4. 在校验参数的注解中添加`message`属性，可以替换异常信息。
+
+   ```
+   1// 该控制器开启参数校验
+   2@Validated
+   3@Controller
+   4public class TestController {
+   5  @RequestMapping("/t1")
+   6  @ResponseBody
+   7  // 在参数前加校验注解，该注解的意思是字符串参数不能为null
+   8  public String t1(@NotBlank(message = "用户名不能为空") String username){
+   9    System.out.println(username);
+   10    return "请求成功！";
+   11   }
+   12}
+   ```
+
+###  SpringBoot参数校验_异常处理
+
+当抛出`ConstraintViolationException`异常后，我们可以使用SpringMVC的异常处理器，也可以使用SpringBoot自带的异常处理机制。
+
+当程序出现了异常，SpringBoot会使用自带的`BasicErrorController`对象处理异常。该处理器会默认跳转到/resources/templates/error.html页面。
+
+编写异常页面：
+
+```
+1<!DOCTYPE html>
+2<html lang="en">
+3<head>
+4  <meta charset="UTF-8">
+5  <title>错误页面</title>
+6</head>
+7<body>
+8<h1>服务器开小差了！</h1>
+9</body>
+10</html>
+```
+
+### SpringBoot参数校验_校验相关注解
+
+| 注解      | 作用                                         |
+| --------- | -------------------------------------------- |
+| @NotNull  | 判断包装类是否为null                         |
+| @NotBlank | 判断字符串是否为null或者是空串(去掉首尾空格) |
+| @NotEmpty | 判断集合是否为空                             |
+| @Length   | 判断字符的长度(最大或者最小)                 |
+| @Min      | 判断数值最小值                               |
+| @Max      | 判断数值最大值                               |
+| @Email    | 判断邮箱是否合法                             |
+
+```
+1@RequestMapping("/t2")
+2@ResponseBody
+3public String t2(
+4    @NotBlank @Length(min = 1, max = 5) String username,
+5    @NotNull @Min(0) @Max(150) Integer age,
+6    @NotEmpty @RequestParam List<String> address,
+7    @NotBlank @Email String email) {
+8  System.out.println(username);
+9  System.out.println(age);
+10  System.out.println(address);
+11  System.out.println(email);
+12  return "请求成功！";
+13}
+```
+
+### SpringBoot参数校验_对象类型
+
+主要校验的是对象的内容;
+
+核心参数：
+
+@Validated -- 针对接口参数
+
+@NotNull -- 针对属性
 
 
+
+1 -- 需要在实体类中加入校验
+
+2 在控制器中加入@Validated，并且将异常对象封装到BindingResult
+
+SpringBoot也可以校验对象参数中的每个属性，用法如下：
+
+1. 添加实体类
+
+   ```
+   1public class Student {
+   2  @NotNull(message = "id不能为空")
+   3  private Integer id;
+   4  @NotBlank(message = "姓名不能为空")
+   5  private String name;
+   6  // 省略getter/setter/tostring
+   7}
+   ```
+
+2. 编写控制器
+
+   ```
+   1@Controller
+   2public class TestController2 {
+   3  @RequestMapping("/t3")
+   4  @ResponseBody
+   5  // 校验的对象参数前添加@Validated，并将异常信息封装到BindingResult对象中
+   6  public String t3(@Validated Student student,BindingResult result) {
+   7    // 判断是否有参数异常
+   8    if (result.hasErrors()) {
+   9      // 所有参数异常
+   10      List<ObjectError> list = result.getAllErrors();
+   11      // 遍历参数异常，输出异常信息
+   12      for (ObjectError err : list) {
+   13        FieldError fieldError = (FieldError) err;
+   14        System.out.println(fieldError.getDefaultMessage());
+   15       }
+   16      return "参数异常";
+   17     }
+   18    System.out.println(student);
+   19    return "请求成功！";
+   20   }
+   21}
+   ```
+
+**FieldError 与 ObjectError：**
+
+- **ObjectError**：是一个通用的错误对象，用于表示全局错误或字段错误。
+- **FieldError**：继承自 ObjectError，仅适用于字段层级的错误。
+  在本例中，我们在遍历错误的时候将 `ObjectError` 强制转换为 `FieldError`，
+  这样可以获取更多关于发生错误的字段的信息，比如字段名称、拒绝的值等。
+  **注意**：这种转换假设你的错误确实都是字段级错误（FieldError）；如果错误中可能包含全局错误，则需要做判断或分别处理。
+
+！ 所以这里其实不需要进行强制类型转换，直接输出即可
+
+**不使用 @RequestBody：**
+目前方法参数上没有加入 `@RequestBody` 注解，所以 JSON 格式的 POST 请求不会自动绑定到 `Student` 对象上。如果需要使用 JSON 发送请求，则应在参数前添加 `@RequestBody` 注解，同时确保客户端发送的 `Content-Type` 为 `application/json`。
+
+
+
+### 例子 2：混合了全局错误和字段错误
+
+有时候你可能会在校验逻辑中添加一些全局校验，比如要求两个字段之间的逻辑关系正确。这类错误并不会绑定到具体的字段上，而是添加全局错误（`ObjectError`），示例如下：
+
+```java
+public class Student {
+  
+    @NotBlank(message = "姓名不能为空")
+    private String name;
+  
+    @Min(value = 18, message = "年龄不能小于18")
+    private int age;
+
+    // 假设有一个全局校验逻辑，比如姓名为 "Admin" 时年龄必须大于等于21
+    @AssertTrue(message = "管理员的年龄必须不小于21")
+    public boolean isValidAdmin() {
+        if ("Admin".equals(name)) {
+            return age >= 21;
+        }
+        return true;
+    }
+
+    // getters 和 setters
+}
+```
+
+假设你传入参数为 `name=Admin` 和 `age=20`，则产生的错误有：
+
+- 对于字段错误，`name` 字段符合 `@NotBlank` 的要求，因此不会出错；`age` 字段也符合 `@Min(18)` 的要求，因此也没有字段级错误。
+- 但是全局校验方法 `isValidAdmin()` 会判断出错误，此时返回的错误是全局错误，存储的为 `ObjectError`（**不是** `FieldError`），因为全局错误没有具体的字段信息。
+
+在这种情况下，如果代码中直接强制转换：
+
+```
+for (ObjectError err : result.getAllErrors()) {
+    FieldError fieldError = (FieldError) err; // 这里会抛出 ClassCastException
+    System.out.println(fieldError.getDefaultMessage());
+}
+```
+
+就会因为全局错误不能被转换成 `FieldError` 抛出异常。为了避免这种问题，应先通过 `instanceof` 进行判断：
+
+```
+for (ObjectError err : result.getAllErrors()) {
+    if (err instanceof FieldError) {
+        FieldError fieldError = (FieldError) err;
+        // 输出字段错误信息
+        System.out.println("字段 " + fieldError.getField() + " 错误：" + fieldError.getDefaultMessage());
+    } else {
+        // 处理全局错误，通常没有字段名称
+        System.out.println("全局错误：" + err.getDefaultMessage());
+    }
+}
+```
+
+**输出示例**
+
+```
+全局错误：管理员的年龄必须不小于21
+```
+
+
+
+
+
+## 33 SpringBoot指标监控_添加Actuator功能
+
+### 基本知识
+
+Spring Boot Actuator可以帮助程序员监控和管理SpringBoot应用，比如健康检查、内存使用情况统计、线程使用情况统计等。我们在SpringBoot项目中添加Actuator功能，即可使用Actuator监控项目，用法如下：
+
+1. 在被监控的项目中添加Actuator起步依赖
+
+   ```
+   1<dependency>
+   2  <groupId>org.springframework.boot</groupId>
+   3  <artifactId>spring-boot-starter-actuator</artifactId>
+   4</dependency>
+   ```
+
+2. 编写配置文件
+
+   ```
+   1#开启所有监控端点
+   2management:
+   3  endpoints:
+   4   web:
+   5    exposure:
+   6     include: '*'
+   ```
+
+3. 访问项目：http://localhost:9999/actuator
+
+通过URL可以调用actuator的功能：
+
+| URL       | 查看的数据                    |
+| --------- | ----------------------------- |
+| /env      | 环境属性                      |
+| /health   | 健康检查                      |
+| /mappings | 显示所有的@RequestMapping路径 |
+| /loggers  | 日志                          |
+| /info     | 定制信息                      |
+| /metrics  | 查看内存、CPU核心等系统参数   |
+| /trace    | 用户请求信息                  |
+
+例如查询健康数据，访问http://localhost:9999/actuator/health
+
+### 基本可视化用法 - SpringBoot指标监控_Spring Boot Admin
+
+![image-20230804170157714](https://i-blog.csdnimg.cn/img_convert/d06eb31e3b11c2136e8ee8137498caa9.png)
+
+Actuator使用JSON格式展示了大量指标数据，不利于我们查看，我们可以使用可视化工具Spring Boot Admin查看actuator生成指标数据。Spring Boot Admin是一个独立的项目，我们需要创建并运行该项目。
+
+创建Spring Boot Admin服务端项目
+
+1. 创建SpringBoot项目，添加SpringMVC和Spring Boot Admin服务端起步依赖
+
+   ```
+   1<dependency>
+   2  <groupId>org.springframework.boot</groupId>
+   3  <artifactId>spring-boot-starter-web</artifactId>
+   4</dependency>
+   5<dependency>
+   6  <groupId>de.codecentric</groupId>
+   7  <artifactId>spring-boot-admin-starter-server</artifactId>
+   8  <version>3.1.3</version>
+   9</dependency>
+   ```
+
+2. 修改配置文件
+
+   ```
+   1# 端口号
+   2server.port=9090
+   3# 日志格式
+   4logging.pattern.console=%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n
+   ```
+
+3. 修改启动类
+
+   ```
+   1@SpringBootApplication
+   2@EnableAdminServer //开启Spring Boot Admin服务端
+   3public class MyadminApplication {
+   4  public static void main(String[] args) {
+   5    SpringApplication.run(MyadminApplication.class, args);
+   6   }
+   7}
+   ```
+
+连接Spring Boot Admin项目
+
+在被监控的项目中连接Spring Boot Admin项目，才能使用Spring Boot Admin查看指标数据。
+
+1. 被监控项目添加Spring Boot Admin客户端起步依赖
+
+   ```
+   1<dependency>
+   2  <groupId>de.codecentric</groupId>
+   3  <artifactId>spring-boot-admin-starter-client</artifactId>
+   4  <version>3.1.3</version>
+   5</dependency>
+   ```
+
+2. 修改配置文件
+
+   ```
+   1#Spring boot admin访问地址
+   2spring.boot.admin.client.url=http://localhost:9090
+   ```
+
+3. 此时Spring Boot Admin即可连接被监控的项目
+
+
+
+
+
+## 34 SpringBoot日志管理_Logback
+
+SpringBoot默认使用Logback组件作为日志管理。Logback是log4j创始人设计的一个开源日志组件。在SpringBoot中已经整合了Logback的依赖，所以我们不需要额外的添加其他依赖：
+
+Logback配置用法如下：
+
+1. 在`/resources`下添加Logback配置文件logback.xml
+
+```
+1<?xml version="1.0" encoding="UTF-8" ?>
+2<configuration>
+3  <!--定义日志文件的存储地址-->
+4  <property name="LOG_HOME" value="${catalina.base}/logs/"/>
+5  
+6  <!-- 控制台输出 -->
+7  <appender name="Stdout" class="ch.qos.logback.core.ConsoleAppender">
+8    <!-- 日志输出编码 -->
+9    <layout class="ch.qos.logback.classic.PatternLayout">
+10      <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+11      <pattern>%d{MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+12      </pattern>
+13    </layout>
+14  </appender>
+15  
+16  <!-- 按照每天生成日志文件 -->
+17  <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+18    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+19      <!--日志文件输出的文件名-->
+20      <FileNamePattern>${LOG_HOME}/server.%d{yy99-MM-dd}.log</FileNamePattern>
+21      <MaxHistory>30</MaxHistory>
+22    </rollingPolicy>
+23    <layout class="ch.qos.logback.classic.PatternLayout">
+24      <!--格式化输出：%d表示时间，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+25      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+26      </pattern>
+27    </layout>
+28    <!--日志文件最大的大小-->
+29    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+30      <MaxFileSize>10MB</MaxFileSize>
+31    </triggeringPolicy>
+32  </appender>
+33
+
+34  <!-- 日志输出级别 -->
+35  <root level="info">
+36    <appender-ref ref="Stdout"/>
+37    <appender-ref ref="RollingFile"/>
+38  </root>
+39</configuration>
+```
+
+> 注：Logback配置文件名为logback-test.xml或logback.xml，如果classpath下没有这两个文件，LogBack会自动进行最小化配置。
+
+## 35 SpringBoot日志管理_打印自定义日志
+
+如果想在运行时打印自定义日志，只需要引入Logger对象即可：
+
+```
+1@Controller
+2public class LogbackController {
+3  private final static Logger logger = LoggerFactory.getLogger(LogbackController.class);
+4
+
+5  @RequestMapping("/printLog")
+6  @ResponseBody
+7  public String showInfo(){
+8    logger.info("记录日志");
+9    return "Hello Logback";
+10   }
+11}
+```
+
+如果日志过多，可以屏蔽一些包的日志，在配置文件中配置
+
+```
+1#屏蔽org包中的日志输出
+2logging.level.org=off
+```
+
+### SpringBoot日志管理_Log4j2安全漏洞
+
+2021年12月，Log4j2被爆出了极其严重的安全漏洞，攻击者可以让记录的日志包含指定字符串，从而执行任意程序。很多大型网站，如百度等都是此次Log4j漏洞的受害者，很多互联网企业连夜做了应急措施。
+
+Log4j2.0到2.14.1全部存在此漏洞，危害范围极其广泛，Log4j2.15.0-rc1中修复了这个 bug。
+
+因Log4j2漏洞的反复无常，导致某些公司已经切换到Logback来记录日志，但在Log4j2漏洞爆出后，Logback也爆出漏洞：在Logback1.2.7及之前的版本中，具有编辑配置文件权限的攻击者可以制作恶意配置，允许从LDAP服务器加载、执行任意代码。
+
+解决方案为将Logback升级到安全版本：`Logback1.2.9+`
+
+SpringBoot2.6.2以上的Logback版本已经升到了1.2.9，Log4j2的版本也升到了2.17.0，所以我们使用SpringBoot2.6.2以上版本的SpringBoot时，无需担心Log4j2和Logback安全漏洞。
+
+
+
+## 36 项目部署
+
+
+
+![image-20250322221002907](https://i-blog.csdnimg.cn/img_convert/2bf2d5e1317a63339832ffcbb2fdf619.png)
+
+
+
+### 项目打包
+
+SpringBoot项目是依赖于Maven构建的，但打包时如果只依赖Maven打包工具则会打包不完整，我们还需要在SpringBoot项目中引入SpringBoot打包插件 ：
+
+```
+1<build>
+2  <plugins>
+3    <plugin>
+4      <groupId>org.springframework.boot</groupId>
+5      <artifactId>spring-boot-maven-plugin</artifactId>
+6    </plugin>
+7  </plugins>
+8</build>
+```
+
+此时再使用Maven插件打包：
+
+![image-20230808145413082](https://i-blog.csdnimg.cn/img_convert/faf53547fc3861104d01e72a3748e899.png)
+
+打包后jar包解压目录如下：
+
+![image-20220111112956993](https://i-blog.csdnimg.cn/img_convert/f9c79e8af8fa07a1f111a0e8d0093067.png)
+
+如果不添加SpringBoot打包插件，打包后jar包解压目录如下：
+
+![image-20220111113108745](https://i-blog.csdnimg.cn/img_convert/83ea26a81f2020c3a4b6e515951695f6.png)
+
+可以看到该目录少了BOOT-INF，打包是不完整的，也无法运行jar包
+
+**运行jar包：**
+
+1. 进入jar包所在目录，使用cmd打开命令行窗口
+
+2. 输入命令：
+
+   ```
+   1java -jar jar包名
+   ```
+
+
+
+### SpringBoot项目部署_多环境配置
+
+在真实开发中，在不同环境下运行项目往往会进行不同的配置，比如开发环境使用的是开发数据库，测试环境使用的是测试数据库，生产环境使用的是生产数据库。SpringBoot支持不同环境下使用不同的配置文件，用法如下：
+
+> 配置文件名：
+>
+> application-环境名.properties/yml
+>
+> 如：
+>
+> 1. application-dev.properties/yml 开发环境配置文件
+     >
+     >    ```
+>    1# 开发环境端口号为8080
+>    2server:
+>    3  port: 8080
+>    ```
+>
+> 2. application-test.properties/yml 测试环境配置文件
+     >
+     >    ```
+>    1# 测试环境端口号为8081
+>    2server:
+>    3  port: 8081
+>    ```
+>
+> 3. application-prod.properties/yml 生产环境配置文件
+     >
+     >    ```
+>    1# 生产环境端口号为80
+>    2server:
+>    3  port: 80
+>    ```
+
+运行jar包时选择环境：
+
+```
+1java -jar jar包名 --spring.profiles.active=环境名
+```
+
+
+
+### SpringBoot项目部署_Dockerfile制作镜像
+
+为了节约资源，在生产环境中我们更多的是使用Docker容器部署SpringBoot应用，首先我们准备Docker环境：
+
+1. 准备一台centos7系统的虚拟机，连接虚拟机。
+
+2. 关闭虚拟机防火墙
+
+   ```
+   1# 关闭运行的防火墙
+   2systemctl stop firewalld.service
+   3
+   
+   4# 禁止防火墙自启动
+   5systemctl disable firewalld.service
+   ```
+
+3. 安装Docker
+
+   ```
+   1# 安装Docker
+   2yum -y install docker
+   3
+   
+   4# 启动docker
+   5systemctl start docker
+   ```
+
+4. 由于SpringBoot中嵌入了Web容器，所以在制作SpringBoot项目的镜像时无需依赖Web容器，基于JDK制作镜像即可，接下来我们使用Dockerfile制作镜像：
+
+5. 进入opt目录
+
+   ```
+   1cd /opt
+   ```
+
+6. 使用rz命令将项目Jar包上传至虚拟机
+
+7. 编写DockerFile
+
+   ```
+   1cat <<EOF > Dockerfile
+   2# 基于JDK17
+   3FROM openjdk:17
+   4# 作者
+   5MAINTAINER bootscoder
+   6# 拷贝到容器opt目录
+   7ADD springbootdemo9-0.0.1-SNAPSHOT.jar /opt
+   8#保留端口
+   9EXPOSE 8080
+   10# 启动容器后执行的命令
+   11CMD java -jar /opt/springbootdemo9-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+   12EOF
+   ```
+
+8. 构建镜像
+
+   ```
+   1docker build -t springbootdocker .
+   ```
+
+9. 查看所有的镜像，出现springbootdocker代表镜像构建成功
+
+   ```
+   1docker images
+   ```
+
+10. 使用镜像启动容器
+
+    ```
+    1docker run -d -p 8080:8080 springbootdocker
+    ```
+
+11. 访问项目
+
+
+
+### SpringBoot项目部署_Maven插件制作镜像
+
+除了DockerFile，我们还可以使用Maven插件制作镜像。使用方法如下：
+
+1. 开启远程docker服务
+
+   ```
+   1# 修改docker配置文件
+   2vim /lib/systemd/system/docker.service
+   3
+   
+   4# 在ExecStart=后添加配置，远程访问docker的端口为2375
+   5ExecStart=/usr/bin/dockerd-current -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock \
+   6     --add-runtime docker-runc=/usr/libexec/docker/docker-runc-current \
+   7     --default-runtime=docker-runc \
+   8     --exec-opt native.cgroupdriver=systemd \
+   9     --userland-proxy-path=/usr/libexec/docker/docker-proxy-current \
+   10     --init-path=/usr/libexec/docker/docker-init-current \
+   11     --seccomp-profile=/etc/docker/seccomp.json \
+   12     $OPTIONS \
+   13     $DOCKER_STORAGE_OPTIONS \
+   14     $DOCKER_NETWORK_OPTIONS \
+   15     $ADD_REGISTRY \
+   16     $BLOCK_REGISTRY \
+   17     $INSECURE_REGISTRY \
+   18     $REGISTRIES
+   19
+   
+   20
+   
+   21# 重启docker
+   22systemctl daemon-reload
+   23systemctl restart docker
+   ```
+
+2. 在项目的pom文件中添加`docker-maven-plugin`插件
+
+   ```
+   1<!-- docker-maven-plugin-->
+   2<plugin>
+   3  <groupId>com.spotify</groupId>
+   4  <artifactId>docker-maven-plugin</artifactId>
+   5  <version>1.2.2</version>
+   6  <configuration>
+   7    <!-- Docker路径 -->
+   8    <dockerHost>http://192.168.1.25:2375</dockerHost>
+   9    <!-- Dockerfile定义 -->
+   10    <baseImage>openjdk:17</baseImage>
+   11    <!-- 作者 -->
+   12    <maintainer>itbaizhan</maintainer>
+   13    <resources>
+   14      <resource>
+   15        <!-- 复制jar包到docker容器指定目录 -->
+   16        <targetPath>/</targetPath>
+   17        <!-- 从哪个包拷贝文件，target包 -->
+   18        <directory>${project.build.directory}</directory>
+   19        <!-- 拷贝哪个文件 -->
+   20        <include>${project.build.finalName}.jar</include>
+   21      </resource>
+   22    </resources>
+   23    <workdir>/</workdir>
+   24    <entryPoint>["java", "-jar", "${project.build.finalName}.jar","--spring.profiles.active=dev"]</entryPoint>
+   25    <forceTags>true</forceTags>
+   26    <!-- 镜像名 -->
+   27    <imageName>${project.artifactId}</imageName>
+   28    <!-- 镜像版本 -->
+   29    <imageTags>
+   30      <imageTag>${project.version}</imageTag>
+   31    </imageTags>
+   32  </configuration>
+   33</plugin>
+   ```
+
+3. 使用maven的package命令给项目打包
+
+   ![image-20230808163945646](https://i-blog.csdnimg.cn/img_convert/6d03d29e225ac92ea42ba496f816ebd3.png)
+
+4. 使用maven的docker插件制作镜像
+
+   ![image-20230808164005303](https://i-blog.csdnimg.cn/img_convert/d922c3b9180d5e0708ef3a6fc4c68300.png)
+
+5. 查看镜像是否构建成功
+
+   ```
+   1docker images
+   ```
+
+6. 使用镜像启动容器
+
+   ```
+   1docker run -d -p 8081:8080 demo1:0.0.1-SNAPSHOT
+   ```
+
+7. 访问项目
+
+
+
+
+
+## 37 springboot原理分析
+
+![image-20250322235752376](https://i-blog.csdnimg.cn/img_convert/05b85d541a6d7f7daed0e88cf53bfcf2.png)
+
+
+
+### 查看spring-boot-starter-parent起步依赖
+
+1. 按住`Ctrl`点击`pom.xml`中的`spring-boot-starter-parent`，跳转到了`spring-boot-starter-parent`的`pom.xml`，发现`spring-boot-starter-parent`的父工程是`spring-boot-dependencies`。
+
+   ![image-20230808164411067](https://i-blog.csdnimg.cn/img_convert/84dc9e391a52a3219a219a2b25a53e70.png)
+
+2. 进入`spring-boot-dependencies`的`pom.xml`可以看到，一部分坐标的版本、依赖管理、插件管理已经定义好，所以SpringBoot工程继承`spring-boot-starter-parent`后已经具备版本锁定等配置了。所以起步依赖的作用就是进行依赖的传递。
+
+   ![image-20211230184531751](https://i-blog.csdnimg.cn/img_convert/9ec70844f8ede7d9f985c4e1f3089862.png)
+
+### 查看spring-boot-starter-web起步依赖
+
+按住`Ctrl`点击`pom.xml`中的`spring-boot-starter-web`，跳转到了`spring-boot-starter-web`的`pom.xml`，从`spring-boot-starter-web`的`pom.xml`中我们可以发现，`spring-boot-starter-web`就是将web开发要使用的`spring-web`、`spring-webmvc`等坐标进行了打包，这样我们的工程只要引入`spring-boot-starter-web`起步依赖的坐标就可以进行web开发了，同样体现了依赖传递的作用。
+
+![image-20230808165231622](https://i-blog.csdnimg.cn/img_convert/6842d59d0cbd786dde50098f3c9f1b70.png)
+
+
+
+### SpringBoot原理分析_自动配置
+
+1. 查看注解`@SpringBootApplication`的源码
+
+   ![image-20230808165629350](https://i-blog.csdnimg.cn/img_convert/1a64d4c98d41fa001d3246f24e6cac00.png)
+
+   > @EnableAutoConfiguration：SpringBoot自动配置功能开启
+
+2. 查看注解`@EnableAutoConfiguration`的源码
+
+   ![image-20230808165706082](https://i-blog.csdnimg.cn/img_convert/1c80011633259acc6aa2f8701c94ea5d.png)
+
+   > `@Import(AutoConfigurationImportSelector.class)` 导入了`AutoConfifigurationImportSelector`类
+
+3. 查看AutoConfigurationImportSelector源码
+
+   ![image-20230808165912745](https://i-blog.csdnimg.cn/img_convert/2df2107ed7177f1ed0dccef28eccb408.png)
+
+   ![image-20230808165955691](https://i-blog.csdnimg.cn/img_convert/6b56bb9e022802b7c69e9eeae59d42bb.png)
+
+   `SpringFactoriesLoader.loadFactoryNames`方法的作用就是从这个文件中读取指定类对应的类名称列表
+
+4. 点开`spring-boot-autoconfigure`的`spring.factories`文件
+
+   ![image-20230808170212266](https://i-blog.csdnimg.cn/img_convert/7415b0866c7c64f071d62d0909d8ae58.png)
+
+   有关配置类的信息如下：
+
+   ![image-20230808170233207](https://i-blog.csdnimg.cn/img_convert/92a1059998ead36c07b135709a443308.png)
+
+   上面配置文件存在大量的以`Configuration`为结尾的类名称，这些类就是存有自动配置信息的类，而`SpringApplication`在获取这些类名后再加载。
+
+5. 我们`ServletWebServerFactoryAutoConfiguration`为例来分析源码：
+
+   ![image-20230808170450716](https://i-blog.csdnimg.cn/img_convert/b2b0eabcfbb4172ff7fbe8a7ffd4ef66.png)
+
+   > `@EnableConfigurationProperties(ServerProperties.class)`代表加载`ServerProperties`服务器配置属性类。
+
+6. 进入`ServerProperties`类源码如下：
+
+   ![image-20230808170702227](https://i-blog.csdnimg.cn/img_convert/9fac6d13c69007f724d4c1fa528b0b16.png)
+
+   `prefifix = "server"`表示SpringBoot配置文件中的前缀，SpringBoot会将配置文件中以server开始的属性映射到该类的字段中。所以配置网络端口的方式为`server.port`
+
+7. 如果我们没有在配置文件中配置默认端口，SpringBoot就会读取默认配置，而默认配置存放在`META-INF/spring-configuration-metadata.json`中，打开`spring-boot-autoconfigure`的`spring.factories`文件
+
+   ![image-20230808170837021](https://i-blog.csdnimg.cn/img_convert/5407e5a0c5ca310b1d5e3eb93668cfc7.png)
+
+   该文件中保存的就是所有默认配置信息。
+
+   ![image-20230808170921211](https://i-blog.csdnimg.cn/img_convert/04efb857fbd64c40a68d072646acf473.png)
+
+
+
+### SpringBoot原理分析_核心注解
+
+#### @SpringBootApplication
+
+标注是SpringBoot的启动类。
+
+此注解等同于`@SpringBootConfiguration`+`@EnableAutoConfiguration`+`@ComponentScan`。
+
+#### @SpringBootConfiguration
+
+`@SpringBootConfiguration`是`@Configuration`的派生注解，跟`@Configuration`功能一致，标注这个类是一个配置类，只不过`@SpringBootConfiguration`是Springboot的注解，而`@Configuration`是Spring的注解
+
+#### @EnableAutoConfiguration
+
+SpringBoot自动配置注解。
+
+等同于`@AutoConfigurationPackage`+`@Import(AutoConfigurationImportSelector.class)`
+
+#### @AutoConfigurationPackage
+
+自动扫描包的注解，它会自动扫描启动类所在包下所有加了注解的类（@Controller，@Service等），以及配置类（@Configuration）。
+
+#### @Import({AutoConfigurationImportSelector.class})
+
+该注解会导入`AutoConfifigurationImportSelector`类对象，该对象会从`META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`文件中读取配置类的名称列表。
+
+#### @ComponentScan
+
+该注解会扫描项目，自动装配一些项目启动需要的Bean。
+
+## 38 Springboot 3 新特性
+
+![image-20250323001231941](https://i-blog.csdnimg.cn/img_convert/a1c83cb261be4d73ffe5ef0e908e32c0.png)
+
+我们在使用SpringBoot3的时候，一定要注意以下几个方面的改动：
+
+1. JDK要求最低版本Java17
+
+2. SpringBoot3底层默认的Spring版本是Spring6
+
+3. 新增了一些起步依赖，有一些起步依赖进行了调整，但改动不大。
+
+4. 自动配置包位置发生了变化
+
+   > SpringBoot2.x
+   >
+   > ![image-20220117103652632](https://i-blog.csdnimg.cn/img_convert/d2b1fb870734ff924a235f6eef2f624e.png)
+   >
+   > SpringBoot3.x
+   >
+   > ![image-20230808170212266](https://i-blog.csdnimg.cn/img_convert/9aec05adc6531ac8ebe4a345eed8ee43.png)
+
+5. jakarta api迁移
+
+   由于JavaEE已经变更为Jakarta EE，包名以 javax开头的需要相应地变更为jakarta
+
+   > SpringBoot2.x
+   >
+   > ![image-20230809163026933](https://i-blog.csdnimg.cn/img_convert/8c23dd0a6396a2e12402f57c8d28aa36.png)
+   >
+   > SpringBoot3.x
+   >
+   > ![image-20230809163057134](https://i-blog.csdnimg.cn/img_convert/376503522848410b8be6ad19d17a3508.png)
+
+
+
+
+
+### SpringBoot3新特性_ProblemDetails
+
+### RFC 7807
+
+之前的项目如果出现异常，默认跳转到error页面。或者是抛出500异常。
+
+![image-20230809164413728](https://i-blog.csdnimg.cn/img_convert/61c3567bdfb18dc4a7b9a83a4fcb09e7.png)
+
+![image-20230809164446986](https://i-blog.csdnimg.cn/img_convert/fa1ab54e27dfcab054e1cc8343e00f32.png)
+
+但是对于前后端分离的项目，Java程序员不负责页面跳转，只需要把错误信息交给前端程序员处理即可。而RFC 7807规范就是将异常信息转为JSON格式的数据。这个JSON数据包含五个部分
+
+- type: 问题描述文档地址，如果不存在，则"about:blank"
+
+- title: 简短的描述问题
+
+- status: http 状态码，比如400、401、500等
+
+- detail: 详细说明发生问题的原因
+
+- instance: 问题发生的URL地址
+
+  ```
+  1{
+  2  "type": "https://pack.com/probs/out-of-credit",
+  3  "title": "你没有足够的信用。",
+  4  "status": 601,
+  5  "detail": "你现在的余额是30，但是要花50。",
+  6  "instance": "/account/12345/msgs/abc"
+  7}
+  ```
+
+前端程序员拿到这串JSON数据进行处理就可以了。
+
+### ProblemDetails
+
+SpringBoot中提供了一个类`ProblemDetailsExceptionHandler`，他会把错误信息转为RFC 7807规范并返回。
+
+可以看到`ProblemDetailsExceptionHandler`是一个异常处理器
+
+![image-20230809165727550](https://i-blog.csdnimg.cn/img_convert/0409c4f7cc0e6df5a84487d97d242ded.png)
+
+它会处理以下异常
+
+![image-20230809165818049](https://i-blog.csdnimg.cn/img_convert/dd560f49dc28c632a3e6bf1ca79ea9de.png)
+
+接下来我们就使用ProblemDetails处理异常，请求方式异常也属于ProblemDetails处理的异常，我们就模拟改异常的发生。
+
+ProblemDetails默认是不开启的，要想开启需要进行如下配置：
+
+```
+1spring.mvc.problemdetails.enabled=true
+```
+
+编写一个控制器方法
+
+```
+1@Controller
+2public class ProblemDetailsController {
+3  @GetMapping("/testProblem")
+4  @ResponseBody
+5  public String testProblem(){
+6    return "hello";
+7   }
+8}
+```
+
+用POST方式访问该方法：
+
+![image-20230809171255778](https://i-blog.csdnimg.cn/img_convert/3cd35fc1126b4eb61d769c0608fe2118.png)
+
+
+
+### SpringBoot3新特性_原生镜像
+
+![image-20230825194703967](https://i-blog.csdnimg.cn/img_convert/0a60944f396dbc0e96794c9fe914c956.png)
+
+#### JAVA语言的执行原理
+
+- **计算机语言**：
+
+  计算机能够直接执行的指令。这种指令和系统及硬件有关。
+
+- **计算机高级语言**：
+
+  在遵循语法的前提下，写一个文本文件，之后利用某种方式，把文本转换为计算机指令执行。
+
+我们编写的都是计算机高级语言，而将**计算机高级语言**转为**计算机语言**运行，有两种方式：
+
+- **动态解释(JIT)**：解释执行，运行时翻译为机器码。（比如Python，也称为解释型语言）
+
+  ![image-20230825162607086](https://i-blog.csdnimg.cn/img_convert/5a7d2f3d78077ae87ce99f25fd46748f.png)
+
+- **静态编译(AOT)**：程序在执行前全部被翻译为机器码，可以直接运行二进制文件。（比如C++，也称为解释型语言）
+
+  ![image-20230825162850285](https://i-blog.csdnimg.cn/img_convert/0ac4054b60a5c4a4da0b36f34175dab3.png)
+
+这两种方式各有优缺点，动态解释代码运行效率较低，但可以跨平台运行。
+
+静态编译代码运行效率较高，但不能跨平台运行，而且编译代码比较浪费时间，调试成本高。
+
+- **JAVA语言**：先编译，后解释执行
+
+![image-20230825163238910](https://i-blog.csdnimg.cn/img_convert/fb712e76a5e45b0d169f5837f4f89f52.png)
+
+> 注意，JVM并不是单纯依靠解释器解释虚拟指令，JVM中既有解释器，还有即时编译器。
+>
+> - **解释器**可以将字节码文件解释为机器指令，立即执行。
+> - **即时编译器**可以将字节码文件编译为机器指令，存在内存中，编译完成后直接执行本地机器指令即可。
+>
+> 当Java虚拟器启动后，解释器首先发挥作用，不必等待即时编译器全部编译完成后再执行。随着时间的推移，编译器把越来越多的代码编译成本地代码，此时运行本地机器指令，获得更高的执行效率。
+>
+> 虽然这种启动方式很优秀，但他的启动还是比AOT方式慢。在当前**微服务、云原生**盛行的时代，JAVA 程序显得越来越臃肿，虽然使用AOT也有诸多缺点，比如**打包时间长、舍弃平台无关性、反射、动态代理的分析能力有限**。但是JAVA必定会向AOT发展，否则在**云原生**时代，可以能被其他后起之秀慢慢蚕食市场。
+
+### Native Image
+
+Native Image(原生镜像)是一种将Java代码提前编译为二进制文件的技术，即本机可执行文件。在Windows中就是.exe文件，它脱离了Java程序员运行时对JVM的依赖，运行时效率极高。
+
+Spring推荐使用`SpringBoot3`+`GraalVM`官方构建工具实现原生镜像构建。
+
+### GraalVM
+
+GraalVM是一个高性能跨语言虚拟机，其目的是提升Java和其他使用JVM语言编写程序的执行速度，同时也为JavaScript、Python和许多其他流行语言提供运行时环境。起始于2011年Oracle实验室的一个研究项目。
+
+![image-20230825181949729](https://i-blog.csdnimg.cn/img_convert/9e95d2b2b8a501875d02c5c4f565559e.png)
+
+> GraalVM可以直接当做JVM使用，也可以对Java等多种语言实现静态编译，生成Java项目的原生镜像。
+
+### 生成原生镜像
+
+接下来我们就生成SpringBoot3项目的原生镜像：
+
+1. 安装GraalVM
+
+   > - 解压windows版的GraalVM
+   > - 配置环境变量`JAVA_HOME`和`Path`
+
+2. 创建SpringBoot项目
+
+   > - 创建时的JDK一定要选择GraalVM
+       >
+       >   ![image-20230825182601693](https://i-blog.csdnimg.cn/img_convert/ad89686a21a69af47b15f5647471efc6.png)
+   >
+   > - 添加依赖时一定要选择GraalVM
+       >
+       >   ![image-20230825182654751](https://i-blog.csdnimg.cn/img_convert/0ec22fc10e720496c2ff579ba1b6219a.png)
+   >
+   > - 编写控制器
+       >
+       >   ```
+   >   1@Controller
+   >   2public class HelloController {
+   >   3  @ResponseBody
+   >   4  @RequestMapping("/hello")
+   >   5  public String hello(){
+   >   6    return "Hello Native Image";
+   >   7   }
+   >   8}
+   >   ```
+
+3. 通过安装VisualStudio安装C++开发环境，虽然GraalVM可以生成原生镜像，但底层是调用C++的方式生成的.exe可执行文件。
+
+   ![image-20230825183138112](https://i-blog.csdnimg.cn/img_convert/80a1879eddebdf536fbb3e400c7157a2.png)
+
+   ![image-20230825183154583](https://i-blog.csdnimg.cn/img_convert/58e4d6e4796064542b10d53e9a027cfb.png)
+
+4. 使用maven将SpringBoot项目打包成可执行文件
+
+   ![image-20230825183435689](https://i-blog.csdnimg.cn/img_convert/29e4cf40fa74a01a73e67fa64eff5a10.png)
+
+
+
+
+
+
+
+### SpringBoot3新特性_生成Linux原生镜像
+
+1. 准备Linux虚拟机，连接虚拟机
+
+2. 安装C++开发环境
+
+   ```
+   1yum install -y gcc glibc-devel zlib-devel
+   ```
+
+3. 安装GraalVM
+
+   ```
+   1# 创建空文件夹
+   2mkdir -p /usr/local/java
+   3
+   
+   4# 进入文件夹
+   5cd /usr/local/java
+   6
+   
+   7# 上传GraalVM到Linux虚拟机
+   8
+   
+   9# 解压GraalVM
+   10tar -zxvf graalvm-jdk-17_linux-x64_bin.tar.gz
+   ```
+
+4. 配置GraalVM环境变量
+
+   ```
+   1# 打开环境变量配置文件
+   2vim  /etc/profile
+   3
+   
+   4# 添加如下内容
+   5export JAVA_HOME=/usr/local/java/graalvm-jdk-17.0.8+9.1
+   6export PATH=$PATH:$JAVA_HOME/bin
+   7
+   
+   8# 使环境变量生效
+   9source /etc/profile
+   10
+   
+   11# 查看Java版本
+   12java -version
+   ```
+
+   > 如果Java版本没有改动，卸载掉Linux系统自带的JDK即可：
+   >
+   > ```
+   > 1# 查看系统自带的Java
+   > 2rpm -qa|grep java
+   > 3
+   > 
+   > 4# 卸载JAVA
+   > 5rpm -e --nodeps java版本
+   > ```
+
+5. 安装Maven
+
+   ```
+   1# 创建空文件夹
+   2mkdir -p /usr/local/maven
+   3
+   
+   4# 进入文件夹
+   5cd /usr/local/maven
+   6
+   
+   7# 上传Maven到Linux虚拟机
+   8
+   
+   9# 解压Maven
+   10tar -xvf apache-maven-3.8.8-bin.tar.gz
+   ```
+
+6. 配置Maven环境变量
+
+   ```
+   1# 打开环境变量配置文件
+   2vim  /etc/profile
+   3
+   
+   4# 添加如下内容
+   5export M2_HOME=/usr/local/maven/apache-maven-3.8.8
+   6export PATH=$PATH:$M2_HOME/bin
+   7
+   
+   8# 使环境变量生效
+   9source /etc/profile
+   10
+   
+   11# 查看Maven版本
+   12mvn -version
+   ```
+
+7. 修改SpringBoot项目pom文件
+
+   ```
+   1<!-- 添加如下内容，使maven给项目打包时生成原生镜像 -->
+   2<profiles>
+   3  <profile>
+   4    <id>native</id>
+   5    <properties>
+   6      <repackage.classifier>exec</repackage.classifier>
+   7      <native-buildtools.version>0.9.13</native-buildtools.version>
+   8    </properties>
+   9    <build>
+   10      <plugins>
+   11        <plugin>
+   12          <groupId>org.graalvm.buildtools</groupId>
+   13          <artifactId>native-maven-plugin</artifactId>
+   14          <extensions>true</extensions>
+   15          <executions>
+   16            <execution>
+   17              <id>build-native</id>
+   18              <phase>package</phase>
+   19              <goals>
+   20                <goal>build</goal>
+   21              </goals>
+   22            </execution>
+   23          </executions>
+   24        </plugin>
+   25      </plugins>
+   26    </build>
+   27  </profile>
+   28</profiles>
+   ```
+
+8. 把项目压缩成zip文件
+
+9. 把项目的压缩文件上传到虚拟机上
+
+10. 解压项目
+
+    ```
+    1# 安装unzip
+    2yum install unzip
+    3# 解压项目
+    4upzip springbootdemo10.zip 
+    ```
+
+11. 进入项目，执行`mvn clean package -DskipTests -Pnative`，生成原生镜像
 
 
 

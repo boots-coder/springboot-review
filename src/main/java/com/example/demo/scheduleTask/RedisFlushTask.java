@@ -2,6 +2,8 @@ package com.example.demo.scheduleTask;
 
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -10,12 +12,14 @@ import java.util.List;
 
 @Component
 public class RedisFlushTask {
+    private final static Logger logger = LoggerFactory.getLogger(RedisFlushTask.class);
 
     @Autowired
     private UserMapper userMapper;
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+
 
     /**
      * 每天0点触发（0秒 0分 0时，每天）
@@ -40,7 +44,6 @@ public class RedisFlushTask {
             String key = "user:" + user.getId();
             redisTemplate.opsForValue().set(key, user);
         }
-
-        System.out.println("成功将 MySQL 中的用户数据存入 Redis");
+        logger.info("成功将 MySQL 中的用户数据存入 Redis");
     }
 }
