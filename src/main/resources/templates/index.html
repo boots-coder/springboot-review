@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 引入thymeleaf命名空间，方便使用thymeleaf属性 -->
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>thymeleaf入门</title>
@@ -9,5 +9,37 @@
 <!-- 静态页面显示数据，动态页面使用后端传来的msg数据代替 -->
 <!-- thymeleaf支持el表达式 -->
 <h2 th:text="${msg}">hello，bootscoder</h2>
+<span th:text="${#strings.contains(msg, 'hello')}"></span>
+<span th:text="${#strings.substring(msg, 0, 10)}"></span>
+<div>
+    <span th:if ="${sex}=='男'">
+        性别：男
+    </span>
+    <span th:if = "${sex}=='女'">
+        性别：女
+    </span>
+</div>
+
+<div th:switch="${id}">
+    <span th:case="1">id 为1</span>
+    <span th:case="2">id 为2</span>
+    <span th:case="*">都不满足（default）</span>
+</div>
+
+myProjects
+
+<table border="1"  width="50%">
+    <tr>
+        <th>name</th>
+        <th>tech</th>
+    </tr>
+    <tr th:each="myProject:${myProjects}">
+        <td th:text="${myProject.getName()}"></td>
+        <td th:text="${myProject.getTech()}"></td>
+    </tr>
+</table>
+request:<span th:text="${req}"></span><hr/>
+session:<span th:text="${session.session}"></span><hr/>
+application:<span th:text="${application.app}"></span>
 </body>
 </html>
