@@ -26,6 +26,8 @@ management:
 mybatis:
   mapper-locations: classpath:com/example/demo/mapper/*Mapper.xml
   type-aliases-package: com.example.demo.entity
+  configuration:
+    map-underscore-to-camel-case: true  # 启用驼峰转换
 
 logging:
   level:

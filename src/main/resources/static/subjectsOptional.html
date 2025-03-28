@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习路线打卡系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background-color: #fff;
+            color: #1a73e8;
+            border: 1px solid #1a73e8;
+            border-radius: 4px;
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background-color: #1a73e8;
+            color: white;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h1, h2, h3 {
+            color: #1a73e8;
+        }
+
+        h2 {
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .course-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s;
+        }
+
+        .course-item:hover {
+            background-color: #f5f7fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .course-check {
+            margin-right: 15px;
+            transform: scale(1.2);
+        }
+
+        .course-info {
+            flex-grow: 1;
+        }
+
+        .course-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .course-progress, .course-resources {
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #eceff1;
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #4caf50;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .completed .progress-fill {
+            width: 100% !important;
+            background-color: #4caf50;
+        }
+
+        .progress-percentage {
+            float: right;
+            font-weight: normal;
+        }
+
+        button, .btn {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #0d47a1;
+        }
+
+        .btn-danger {
+            background-color: #f44336;
+        }
+
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+
+        .btn-success {
+            background-color: #4caf50;
+        }
+
+        .btn-success:hover {
+            background-color: #388e3c;
+        }
+
+        .resource-item {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #eaeaea;
+            position: relative;
+        }
+
+        .resource-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .resource-actions {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .resource-description {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .resource-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #f44336;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1a73e8;
+            margin: 10px 0;
+        }
+
+        .summary-chart {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-bar {
+            position: absolute;
+            bottom: 0;
+            width: 4%;
+            background-color: #1a73e8;
+            transition: height 0.5s;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -25px;
+            font-size: 10px;
+            text-align: center;
+            transform: rotate(-45deg);
+            transform-origin: top left;
+            white-space: nowrap;
+            width: 100px;
+        }
+
+        .drag-handle {
+            cursor: move;
+            margin-right: 10px;
+        }
+
+        #search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #e3f2fd;
+            color: #1a73e8;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .course-action-btn {
+            margin-left: 5px;
+            padding: 3px 8px;
+            font-size: 0.85em;
+        }
+
+        .filter-options {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-card {
+                width: 100%;
+            }
+
+            .chart-label {
+                font-size: 8px;
+                width: 80px;
+            }
+
+            .resource-actions {
+                position: static;
+                display: flex;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>学习路线打卡系统</h1>
+            <p>追踪您的学习进度，规划您的学习路线</p>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" data-section="dashboard">仪表盘</button>
+            <button class="nav-btn" data-section="courses">课程管理</button>
+            <button class="nav-btn" data-section="resources">学习资源</button>
+            <button class="nav-btn" data-section="planning">学习规划</button>
+        </nav>
+
+        <!-- 仪表盘部分 -->
+        <section id="dashboard" class="section active">
+            <h2>学习概览</h2>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>完成课程</h3>
+                    <div class="stat-value" id="completed-courses">0</div>
+                    <p>总课程: <span id="total-courses">18</span></p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>总体进度</h3>
+                    <div class="stat-value" id="overall-progress">0%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overall-progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>保存的资源</h3>
+                    <div class="stat-value" id="saved-resources">0</div>
+                </div>
+            </div>
+
+            <h3>最近的学习活动</h3>
+            <div id="recent-activities">
+                <p>暂无学习活动记录</p>
+            </div>
+
+            <h3>课程完成情况</h3>
+            <div class="summary-chart" id="courses-chart">
+                <!-- 动态生成的图表 -->
+            </div>
+        </section>
+
+        <!-- 课程管理部分 -->
+        <section id="courses" class="section">
+            <h2>课程管理</h2>
+
+            <input type="text" id="search-box" placeholder="搜索课程...">
+
+            <div class="filter-options">
+                <button class="btn" id="show-all">显示全部</button>
+                <button class="btn" id="show-completed">已完成</button>
+                <button class="btn" id="show-in-progress">进行中</button>
+                <button class="btn" id="show-not-started">未开始</button>
+            </div>
+
+            <div id="course-list">
+                <!-- 动态生成的课程列表 -->
+            </div>
+        </section>
+
+        <!-- 学习资源部分 -->
+        <section id="resources" class="section">
+            <h2>学习资源</h2>
+
+            <input type="text" id="resource-search" placeholder="搜索资源...">
+
+            <div class="filter-options">
+                <button class="btn" id="add-resource-btn">添加新资源</button>
+            </div>
+
+            <div id="resource-list">
+                <!-- 动态生成的资源列表 -->
+            </div>
+        </section>
+
+        <!-- 学习规划部分 -->
+        <section id="planning" class="section">
+            <h2>学习路线规划</h2>
+
+            <div class="form-group">
+                <label for="plan-name">规划名称</label>
+                <input type="text" id="plan-name" placeholder="我的学习规划">
+            </div>
+
+            <div class="form-group">
+                <label for="plan-description">规划描述</label>
+                <textarea id="plan-description" rows="3" placeholder="描述您的学习目标和规划..."></textarea>
+            </div>
+
+            <h3>课程顺序调整</h3>
+            <p>拖拽课程来调整学习顺序</p>
+            <div id="course-order-list">
+                <!-- 动态生成的可拖拽课程列表 -->
+            </div>
+
+            <h3>时间规划</h3>
+            <div id="timeline-planner">
+                <div class="form-group">
+                    <label for="start-date">开始日期</label>
+                    <input type="date" id="start-date">
+                </div>
+
+                <div class="form-group">
+                    <label for="end-date">目标结束日期</label>
+                    <input type="date" id="end-date">
+                </div>
+
+                <button class="btn" id="generate-timeline">生成时间线</button>
+            </div>
+
+            <div id="timeline-result" style="display: none;">
+                <h3>生成的学习时间线</h3>
+                <div id="timeline-display">
+                    <!-- 动态生成的时间线 -->
+                </div>
+                <button class="btn btn-success" id="save-timeline">保存规划</button>
+            </div>
+        </section>
+
+        <!-- 添加资源模态框 -->
+        <div id="add-resource-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>添加学习资源</h2>
+
+                <form id="add-resource-form">
+                    <div class="form-group">
+                        <label for="resource-title">资源标题</label>
+                        <input type="text" id="resource-title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resource-type">资源类型</label>
+                        <select id="resource-type">
+                            <option value="book">书籍</option>
+                            <option value="video">视频</option>
+                            <option value="article">文章</option>
+                            <option value="course">在线课程</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resource-url">资源链接</label>
+                        <input type="url" id="resource-url">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resource-description">资源描述</label>
+                        <textarea id="resource-description" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="related-course">相关课程</label>
+                        <select id="related-course">
+                            <option value="">无关联课程</option>
+                            <!-- 动态生成的课程选项 -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resource-tags">标签（用逗号分隔）</label>
+                        <input type="text" id="resource-tags" placeholder="例如: 教程,参考资料,入门">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">保存资源</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 编辑课程进度模态框 -->
+        <div id="edit-progress-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>更新课程进度</h2>
+
+                <form id="edit-progress-form">
+                    <input type="hidden" id="edit-course-id">
+
+                    <div class="form-group">
+                        <label for="course-progress">完成进度 (%)</label>
+                        <input type="number" id="course-progress" min="0" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course-notes">学习笔记</label>
+                        <textarea id="course-notes" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">更新进度</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // 课程数据
+            const courses = [
+                { id: 1, name: "计算机控制系统", englishName: "Computer Control Systems", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 2, name: "系统分析", englishName: "Systems Analysis", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 3, name: "机器人和智能传感器", englishName: "Robotics & Intelligent Sensors", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 4, name: "计算机视觉", englishName: "Machine Vision", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 5, name: "过程控制", englishName: "Process Control", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 6, name: "项目管理和技术创业", englishName: "Project Management & Technopreneurship", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 7, name: "计算机控制网络", englishName: "Computer Control Networks", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 8, name: "遗传算法和机器学习", englishName: "Genetic Algorithms and Machine Learning", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 9, name: "高级数字信号处理", englishName: "Advanced Digital Signal Processing", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 10, name: "视频信号处理", englishName: "Video Signal Processing", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 11, name: "现代电力驱动", englishName: "Modern Electric Drives", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 12, name: "智能电网中的可再生能源系统", englishName: "Renewable Energy Systems in Smart Grids", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 13, name: "电力系统建模与控制", englishName: "Power System Modelling & Control", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 14, name: "线性系统", englishName: "Linear Systems", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 15, name: "研究方法", englishName: "Research Methods", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 16, name: "神经和模糊系统", englishName: "Neural and Fuzzy Systems", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 17, name: "概率和随机过程", englishName: "Probability and Random Processes", progress: 0, completed: false, notes: "", resources: [] },
+                { id: 18, name: "图像分析和模式识别", englishName: "Image Analysis and Pattern Recognition", progress: 0, completed: false, notes: "", resources: [] }
+            ];
+
+            // 资源数据
+            let resources = [];
+
+            // 学习活动数据
+            let activities = [];
+
+            // 学习规划数据
+            let learningPlan = {
+                name: "",
+                description: "",
+                courseOrder: [...courses.map(c => c.id)],
+                startDate: null,
+                endDate: null,
+                timeline: []
+            };
+
+            // 页面加载时初始化
+            document.addEventListener('DOMContentLoaded', function() {
+                // 加载本地存储数据
+                loadData();
+
+                // 初始化UI
+                renderDashboard();
+                renderCourses();
+                renderResources();
+                renderPlanning();
+
+                // 导航切换
+                const navButtons = document.querySelectorAll('.nav-btn');
+                navButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        navButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const sections = document.querySelectorAll('.section');
+                        sections.forEach(section => section.classList.remove('active'));
+
+                        const targetSection = document.getElementById(this.dataset.section);
+                        targetSection.classList.add('active');
+                    });
+                });
+
+                // 课程过滤事件
+                document.getElementById('show-all').addEventListener('click', () => filterCourses('all'));
+                document.getElementById('show-completed').addEventListener('click', () => filterCourses('completed'));
+                document.getElementById('show-in-progress').addEventListener('click', () => filterCourses('in-progress'));
+                document.getElementById('show-not-started').addEventListener('click', () => filterCourses('not-started'));
+
+                // 搜索框事件
+                document.getElementById('search-box').addEventListener('input', searchCourses);
+                document.getElementById('resource-search').addEventListener('input', searchResources);
+
+                // 添加资源按钮事件
+                document.getElementById('add-resource-btn').addEventListener('click', showAddResourceModal);
+
+                // 关闭模态框事件
+                const closeButtons = document.querySelectorAll('.close');
+                closeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        this.closest('.modal').style.display = 'none';
+                    });
+                });
+
+                // 添加资源表单提交事件
+                document.getElementById('add-resource-form').addEventListener('submit', addResource);
+
+                // 编辑进度表单提交事件
+                document.getElementById('edit-progress-form').addEventListener('submit', updateCourseProgress);
+
+                // 生成时间线事件
+                document.getElementById('generate-timeline').addEventListener('click', generateTimeline);
+
+                // 保存规划事件
+                document.getElementById('save-timeline').addEventListener('click', savePlan);
+
+                // 当用户点击模态框外部时关闭模态框
+                window.addEventListener('click', function(event) {
+                    const modals = document.querySelectorAll('.modal');
+                    modals.forEach(modal => {
+                        if (event.target === modal) {
+                            modal.style.display = 'none';
+                        }
+                    });
+                });
+
+                // 初始化拖拽排序
+                initializeDragAndDrop();
+            });
+
+            // 从本地存储加载数据
+            function loadData() {
+                const savedCourses = localStorage.getItem('learningCourses');
+                if (savedCourses) {
+                    const parsedCourses = JSON.parse(savedCourses);
+                    parsedCourses.forEach((savedCourse, index) => {
+                        if (index < courses.length) {
+                            courses[index].progress = savedCourse.progress || 0;
+                            courses[index].completed = savedCourse.completed || false;
+                            courses[index].notes = savedCourse.notes || "";
+                            courses[index].resources = savedCourse.resources || [];
+                        }
+                    });
+                }
+
+                const savedResources = localStorage.getItem('learningResources');
+                if (savedResources) {
+                    resources = JSON.parse(savedResources);
+                }
+
+                const savedActivities = localStorage.getItem('learningActivities');
+                if (savedActivities) {
+                    activities = JSON.parse(savedActivities);
+                }
+
+                const savedPlan = localStorage.getItem('learningPlan');
+                if (savedPlan) {
+                    learningPlan = JSON.parse(savedPlan);
+                } else {
+                    learningPlan.courseOrder = courses.map(c => c.id);
+                }
+            }
+
+            // 保存数据到本地存储
+            function saveData() {
+                localStorage.setItem('learningCourses', JSON.stringify(courses));
+                localStorage.setItem('learningResources', JSON.stringify(resources));
+                localStorage.setItem('learningActivities', JSON.stringify(activities));
+                localStorage.setItem('learningPlan', JSON.stringify(learningPlan));
+            }
+
+            // 记录学习活动
+            function logActivity(activity) {
+                const now = new Date();
+                activities.unshift({
+                    type: activity.type,
+                    description: activity.description,
+                    timestamp: now.toISOString(),
+                    displayTime: now.toLocaleString()
+                });
+
+                if (activities.length > 20) {
+                    activities.pop(); // 只保留最近的20条活动
+                }
+
+                saveData();
+                renderRecentActivities();
+            }
+
+            // 渲染仪表盘
+            function renderDashboard() {
+                updateStats();
+                renderRecentActivities();
+                renderCoursesChart();
+            }
+
+            // 更新统计数据
+            function updateStats() {
+                const completedCount = courses.filter(course => course.completed).length;
+                document.getElementById('completed-courses').textContent = completedCount;
+                document.getElementById('total-courses').textContent = courses.length;
+
+                const totalProgress = courses.reduce((acc, course) => acc + course.progress, 0);
+                const overallProgress = Math.round(totalProgress / courses.length);
+                document.getElementById('overall-progress').textContent = `${overallProgress}%`;
+                document.getElementById('overall-progress-bar').style.width = `${overallProgress}%`;
+
+                document.getElementById('saved-resources').textContent = resources.length;
+            }
+
+            // 渲染最近活动
+            function renderRecentActivities() {
+                const activitiesContainer = document.getElementById('recent-activities');
+
+                if (activities.length === 0) {
+                    activitiesContainer.innerHTML = '<p>暂无学习活动记录</p>';
+                    return;
+                }
+
+                let html = '';
+                const displayActivities = activities.slice(0, 5); // 只显示前5条
+
+                displayActivities.forEach(activity => {
+                    html += `
+                        <div class="course-item">
+                            <div class="course-info">
+                                <div class="course-title">${activity.description}</div>
+                                <div class="course-progress">${activity.displayTime}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                activitiesContainer.innerHTML = html;
+            }
+
+            // 渲染课程完成图表
+            function renderCoursesChart() {
+                const chartContainer = document.getElementById('courses-chart');
+                chartContainer.innerHTML = '';
+
+                const maxHeight = 250; // 图表最大高度
+
+                courses.forEach((course, index) => {
+                    const barHeight = (course.progress / 100) * maxHeight;
+                    const barLeft = (index * 5.5) + '%';
+
+                    const bar = document.createElement('div');
+                    bar.className = 'chart-bar';
+                    bar.style.left = barLeft;
+                    bar.style.height = `${barHeight}px`;
+                    bar.style.backgroundColor = course.completed ? '#4caf50' : '#1a73e8';
+
+                    const label = document.createElement('div');
+                    label.className = 'chart-label';
+                    label.style.left = barLeft;
+                    label.textContent = `${index + 1}. ${course.name}`;
+
+                    chartContainer.appendChild(bar);
+                    chartContainer.appendChild(label);
+                });
+            }
+
+            // 渲染课程列表
+            function renderCourses(filter = 'all') {
+                const courseListContainer = document.getElementById('course-list');
+                courseListContainer.innerHTML = '';
+
+                let filteredCourses = [...courses];
+
+                if (filter === 'completed') {
+                    filteredCourses = courses.filter(course => course.completed);
+                } else if (filter === 'in-progress') {
+                    filteredCourses = courses.filter(course => course.progress > 0 && !course.completed);
+                } else if (filter === 'not-started') {
+                    filteredCourses = courses.filter(course => course.progress === 0);
+                }
+
+                filteredCourses.forEach(course => {
+                    const courseElement = document.createElement('div');
+                    courseElement.className = `course-item ${course.completed ? 'completed' : ''}`;
+                    courseElement.dataset.id = course.id;
+
+                    courseElement.innerHTML = `
+                        <input type="checkbox" class="course-check" ${course.completed ? 'checked' : ''}>
+                        <div class="course-info">
+                            <div class="course-title">
+                                ${course.id}. ${course.name}
+                                <span class="progress-percentage">${course.progress}%</span>
+                            </div>
+                            <div class="course-english-name">${course.englishName}</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${course.progress}%"></div>
+                            </div>
+                            <div class="course-resources">
+                                相关资源: ${course.resources.length}个
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn course-action-btn edit-progress" data-id="${course.id}">更新进度</button>
+                            <button class="btn course-action-btn view-resources" data-id="${course.id}">查看资源</button>
+                        </div>
+                    `;
+
+                    courseListContainer.appendChild(courseElement);
+
+                    // 添加复选框事件
+                    const checkbox = courseElement.querySelector('.course-check');
+                    checkbox.addEventListener('change', function() {
+                        toggleCourseCompletion(course.id, this.checked);
+                    });
+
+                    // 添加编辑进度按钮事件
+                    const editButton = courseElement.querySelector('.edit-progress');
+                    editButton.addEventListener('click', function() {
+                        showEditProgressModal(course.id);
+                    });
+
+                    // 添加查看资源按钮事件
+                    const viewResourcesButton = courseElement.querySelector('.view-resources');
+                    viewResourcesButton.addEventListener('click', function() {
+                        filterResourcesByCourse(course.id);
+                        // 切换到资源标签页
+                        document.querySelector('.nav-btn[data-section="resources"]').click();
+                    });
+                });
+            }
+
+            // 过滤课程
+            function filterCourses(filter) {
+                renderCourses(filter);
+
+                const buttons = document.querySelectorAll('.filter-options .btn');
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                document.getElementById(`show-${filter}`).classList.add('active');
+            }
+
+            // 搜索课程
+            function searchCourses() {
+                const searchTerm = document.getElementById('search-box').value.toLowerCase();
+                const courseItems = document.querySelectorAll('#course-list .course-item');
+
+                courseItems.forEach(item => {
+                    const courseId = parseInt(item.dataset.id);
+                    const course = courses.find(c => c.id === courseId);
+
+                    if (course.name.toLowerCase().includes(searchTerm) ||
+                        course.englishName.toLowerCase().includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // 切换课程完成状态
+            function toggleCourseCompletion(courseId, completed) {
+                const course = courses.find(c => c.id === courseId);
+
+                if (course) {
+                    course.completed = completed;
+
+                    if (completed) {
+                        course.progress = 100;
+                        logActivity({
+                            type: 'completion',
+                            description: `完成了课程: ${course.name}`
+                        });
+                    } else {
+                        if (course.progress === 100) {
+                            course.progress = 99; // 如果取消完成，进度设为99%
+                        }
+                        logActivity({
+                            type: 'update',
+                            description: `取消了课程完成状态: ${course.name}`
+                        });
+                    }
+
+                    saveData();
+                    renderCourses();
+                    updateStats();
+                    renderCoursesChart();
+                }
+            }
+
+            // 显示编辑进度模态框
+            function showEditProgressModal(courseId) {
+                const course = courses.find(c => c.id === courseId);
+
+                if (course) {
+                    document.getElementById('edit-course-id').value = courseId;
+                    document.getElementById('course-progress').value = course.progress;
+                    document.getElementById('course-notes').value = course.notes;
+
+                    document.getElementById('edit-progress-modal').style.display = 'block';
+                }
+            }
+
+            // 更新课程进度
+            function updateCourseProgress(event) {
+                event.preventDefault();
+
+                const courseId = parseInt(document.getElementById('edit-course-id').value);
+                const progress = parseInt(document.getElementById('course-progress').value);
+                const notes = document.getElementById('course-notes').value;
+
+                const course = courses.find(c => c.id === courseId);
+
+                if (course) {
+                    const oldProgress = course.progress;
+                    course.progress = progress;
+                    course.notes = notes;
+
+                    if (progress === 100 && !course.completed) {
+                        course.completed = true;
+                    } else if (progress < 100 && course.completed) {
+                        course.completed = false;
+                    }
+
+                    logActivity({
+                        type: 'progress',
+                        description: `更新了课程进度: ${course.name} (${oldProgress}% → ${progress}%)`
+                    });
+
+                    saveData();
+                    renderCourses();
+                    updateStats();
+                    renderCoursesChart();
+
+                    document.getElementById('edit-progress-modal').style.display = 'none';
+                }
+            }
+
+            // 渲染资源列表
+            function renderResources(filterCourseId = null) {
+                const resourceListContainer = document.getElementById('resource-list');
+                resourceListContainer.innerHTML = '';
+
+                let filteredResources = [...resources];
+
+                if (filterCourseId) {
+                    filteredResources = resources.filter(res => res.relatedCourse === filterCourseId);
+                }
+
+                if (filteredResources.length === 0) {
+                    resourceListContainer.innerHTML = '<p>暂无学习资源</p>';
+                    return;
+                }
+
+                filteredResources.forEach(resource => {
+                    const resourceElement = document.createElement('div');
+                    resourceElement.className = 'resource-item';
+                    resourceElement.dataset.id = resource.id;
+
+                    // 查找关联课程名称
+                    let courseName = "无关联课程";
+                    if (resource.relatedCourse) {
+                        const relatedCourse = courses.find(c => c.id === resource.relatedCourse);
+                        if (relatedCourse) {
+                            courseName = relatedCourse.name;
+                        }
+                    }
+
+                    // 生成标签HTML
+                    let tagsHtml = '';
+                    if (resource.tags && resource.tags.length > 0) {
+                        tagsHtml = resource.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                    }
+
+                    resourceElement.innerHTML = `
+                        <h3>${resource.title}</h3>
+                        <div class="resource-actions">
+                            <button class="btn delete-resource" data-id="${resource.id}">删除</button>
+                        </div>
+                        <div>类型: ${getResourceTypeText(resource.type)}</div>
+                        ${resource.url ? `<div>链接: <a href="${resource.url}" class="resource-link" target="_blank">${resource.url}</a></div>` : ''}
+                        <div>关联课程: ${courseName}</div>
+                        <div>${tagsHtml}</div>
+                        <div class="resource-description">${resource.description}</div>
+                    `;
+
+                    resourceListContainer.appendChild(resourceElement);
+
+                    // 添加删除资源按钮事件
+                    const deleteButton = resourceElement.querySelector('.delete-resource');
+                    deleteButton.addEventListener('click', function() {
+                        deleteResource(resource.id);
+                    });
+                });
+            }
+
+            // 按课程过滤资源
+            function filterResourcesByCourse(courseId) {
+                renderResources(courseId);
+                document.getElementById('resource-search').value = '';
+            }
+
+            // 搜索资源
+            function searchResources() {
+                const searchTerm = document.getElementById('resource-search').value.toLowerCase();
+                const resourceItems = document.querySelectorAll('#resource-list .resource-item');
+
+                resourceItems.forEach(item => {
+                    const resourceId = parseInt(item.dataset.id);
+                    const resource = resources.find(r => r.id === resourceId);
+
+                    if (resource.title.toLowerCase().includes(searchTerm) ||
+                        (resource.description && resource.description.toLowerCase().includes(searchTerm)) ||
+                        (resource.tags && resource.tags.some(tag => tag.toLowerCase().includes(searchTerm)))) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // 显示添加资源模态框
+            function showAddResourceModal() {
+                const relatedCourseSelect = document.getElementById('related-course');
+                relatedCourseSelect.innerHTML = '<option value="">无关联课程</option>';
+
+                courses.forEach(course => {
+                    const option = document.createElement('option');
+                    option.value = course.id;
+                    option.textContent = `${course.id}. ${course.name}`;
+                    relatedCourseSelect.appendChild(option);
+                });
+
+                // 重置表单
+                document.getElementById('add-resource-form').reset();
+
+                document.getElementById('add-resource-modal').style.display = 'block';
+            }
+
+            // 添加资源
+            function addResource(event) {
+                event.preventDefault();
+
+                const title = document.getElementById('resource-title').value;
+                const type = document.getElementById('resource-type').value;
+                const url = document.getElementById('resource-url').value;
+                const description = document.getElementById('resource-description').value;
+                const relatedCourseStr = document.getElementById('related-course').value;
+                const relatedCourse = relatedCourseStr ? parseInt(relatedCourseStr) : null;
+                const tagsStr = document.getElementById('resource-tags').value;
+                const tags = tagsStr ? tagsStr.split(',').map(tag => tag.trim()) : [];
+
+                const newResource = {
+                    id: resources.length > 0 ? Math.max(...resources.map(r => r.id)) + 1 : 1,
+                    title,
+                    type,
+                    url,
+                    description,
+                    relatedCourse,
+                    tags,
+                    addedDate: new Date().toISOString()
+                };
+
+                resources.push(newResource);
+
+                if (relatedCourse) {
+                    const course = courses.find(c => c.id === relatedCourse);
+                    if (course) {
+                        course.resources.push(newResource.id);
+                    }
+                }
+
+                logActivity({
+                    type: 'resource',
+                    description: `添加了学习资源: ${title}`
+                });
+
+                saveData();
+                renderResources();
+                document.getElementById('add-resource-modal').style.display = 'none';
+            }
+
+            // 删除资源
+            function deleteResource(resourceId) {
+                const resourceIndex = resources.findIndex(r => r.id === resourceId);
+
+                if (resourceIndex !== -1) {
+                    const resource = resources[resourceIndex];
+
+                    // 从相关课程中移除资源引用
+                    if (resource.relatedCourse) {
+                        const course = courses.find(c => c.id === resource.relatedCourse);
+                        if (course) {
+                            course.resources = course.resources.filter(id => id !== resourceId);
+                        }
+                    }
+
+                    resources.splice(resourceIndex, 1);
+
+                    logActivity({
+                        type: 'resource',
+                        description: `删除了学习资源: ${resource.title}`
+                    });
+
+                    saveData();
+                    renderResources();
+                }
+            }
+
+            // 获取资源类型文本
+            function getResourceTypeText(type) {
+                const typeMap = {
+                    'book': '书籍',
+                    'video': '视频',
+                    'article': '文章',
+                    'course': '在线课程',
+                    'other': '其他'
+                };
+
+                return typeMap[type] || '其他';
+            }
+
+            // 渲染学习规划
+            function renderPlanning() {
+                document.getElementById('plan-name').value = learningPlan.name || "";
+                document.getElementById('plan-description').value = learningPlan.description || "";
+
+                if (learningPlan.startDate) {
+                    document.getElementById('start-date').value = learningPlan.startDate;
+                }
+
+                if (learningPlan.endDate) {
+                    document.getElementById('end-date').value = learningPlan.endDate;
+                }
+
+                renderCourseOrderList();
+
+                if (learningPlan.timeline.length > 0) {
+                    document.getElementById('timeline-result').style.display = 'block';
+                    renderTimeline();
+                } else {
+                    document.getElementById('timeline-result').style.display = 'none';
+                }
+            }
+
+            // 渲染课程顺序列表
+            function renderCourseOrderList() {
+                const courseOrderContainer = document.getElementById('course-order-list');
+                courseOrderContainer.innerHTML = '';
+
+                learningPlan.courseOrder.forEach(courseId => {
+                    const course = courses.find(c => c.id === courseId);
+
+                    if (course) {
+                        const courseElement = document.createElement('div');
+                        courseElement.className = 'course-item';
+                        courseElement.draggable = true;
+                        courseElement.dataset.id = course.id;
+
+                        courseElement.innerHTML = `
+                            <div class="drag-handle">⋮⋮</div>
+                            <div class="course-info">
+                                <div class="course-title">
+                                    ${course.id}. ${course.name}
+                                    <span class="progress-percentage">${course.progress}%</span>
+                                </div>
+                                <div class="course-english-name">${course.englishName}</div>
+                            </div>
+                        `;
+
+                        courseOrderContainer.appendChild(courseElement);
+                    }
+                });
+            }
+
+            // 初始化拖拽排序
+            function initializeDragAndDrop() {
+                const courseOrderContainer = document.getElementById('course-order-list');
+
+                let draggedItem = null;
+
+                courseOrderContainer.addEventListener('dragstart', function(e) {
+                    draggedItem = e.target;
+                    setTimeout(function() {
+                        e.target.style.opacity = '0.4';
+                    }, 0);
+                });
+
+                courseOrderContainer.addEventListener('dragend', function(e) {
+                    e.target.style.opacity = '1';
+                });
+
+                courseOrderContainer.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+
+                    const targetItem = e.target.closest('.course-item');
+                    if (targetItem && targetItem !== draggedItem) {
+                        const rect = targetItem.getBoundingClientRect();
+                        const y = e.clientY - rect.top;
+
+                        if (y < rect.height / 2) {
+                            targetItem.style.borderTop = '2px solid #1a73e8';
+                            targetItem.style.borderBottom = '';
+                        } else {
+                            targetItem.style.borderBottom = '2px solid #1a73e8';
+                            targetItem.style.borderTop = '';
+                        }
+                    }
+                });
+
+                courseOrderContainer.addEventListener('dragleave', function(e) {
+                    const targetItem = e.target.closest('.course-item');
+                    if (targetItem) {
+                        targetItem.style.borderTop = '';
+                        targetItem.style.borderBottom = '';
+                    }
+                });
+
+                courseOrderContainer.addEventListener('drop', function(e) {
+                    e.preventDefault();
+
+                    const targetItem = e.target.closest('.course-item');
+
+                    if (targetItem && draggedItem && targetItem !== draggedItem) {
+                        const rect = targetItem.getBoundingClientRect();
+                        const y = e.clientY - rect.top;
+
+                        // 移除拖拽目标上的边框样式
+                        targetItem.style.borderTop = '';
+                        targetItem.style.borderBottom = '';
+
+                        // 拖拽项的课程ID
+                        const draggedCourseId = parseInt(draggedItem.dataset.id);
+                        // 目标项的课程ID
+                        const targetCourseId = parseInt(targetItem.dataset.id);
+
+                        // 更新规划中的课程顺序
+                        const oldOrder = [...learningPlan.courseOrder];
+                        const draggedIndex = oldOrder.indexOf(draggedCourseId);
+                        const targetIndex = oldOrder.indexOf(targetCourseId);
+
+                        if (draggedIndex !== -1 && targetIndex !== -1) {
+                            oldOrder.splice(draggedIndex, 1);
+
+                            // 根据鼠标位置放置在目标上方或下方
+                            if (y < rect.height / 2) {
+                                oldOrder.splice(targetIndex, 0, draggedCourseId);
+                            } else {
+                                oldOrder.splice(targetIndex + 1, 0, draggedCourseId);
+                            }
+
+                            learningPlan.courseOrder = oldOrder;
+                            renderCourseOrderList();
+                        }
+                    }
+                });
+            }
+
+            // 生成时间线
+            function generateTimeline() {
+                const startDateStr = document.getElementById('start-date').value;
+                const endDateStr = document.getElementById('end-date').value;
+
+                if (!startDateStr || !endDateStr) {
+                    alert('请选择开始和结束日期');
+                    return;
+                }
+
+                const startDate = new Date(startDateStr);
+                const endDate = new Date(endDateStr);
+
+                if (startDate >= endDate) {
+                    alert('结束日期必须晚于开始日期');
+                    return;
+                }
+
+                // 计算总天数
+                const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+                // 计算每个课程的推荐学习天数
+                const courseIds = learningPlan.courseOrder;
+                const activeCourses = courseIds.filter(id => {
+                    const course = courses.find(c => c.id === id);
+                    return !course.completed;
+                });
+
+                if (activeCourses.length === 0) {
+                    alert('所有课程已完成，无需规划');
+                    return;
+                }
+
+                const daysPerCourse = Math.floor(totalDays / activeCourses.length);
+
+                const timeline = [];
+                let currentDate = new Date(startDate);
+
+                activeCourses.forEach((courseId, index) => {
+                    const course = courses.find(c => c.id === courseId);
+
+                    // 计算课程结束日期
+                    let courseDays = daysPerCourse;
+                    // 为最后一个课程分配剩余的所有天数
+                    if (index === activeCourses.length - 1) {
+                        courseDays = Math.ceil((endDate - currentDate) / (1000 * 60 * 60 * 24));
+                    }
+
+                    const courseEndDate = new Date(currentDate);
+                    courseEndDate.setDate(currentDate.getDate() + courseDays - 1);
+
+                    timeline.push({
+                        courseId,
+                        courseName: course.name,
+                        startDate: new Date(currentDate).toISOString().split('T')[0],
+                        endDate: courseEndDate.toISOString().split('T')[0],
+                        days: courseDays
+                    });
+
+                    // 更新当前日期为下一个课程的开始日期
+                    currentDate = new Date(courseEndDate);
+                    currentDate.setDate(currentDate.getDate() + 1);
+                });
+
+                learningPlan.startDate = startDateStr;
+                learningPlan.endDate = endDateStr;
+                learningPlan.timeline = timeline;
+
+                document.getElementById('timeline-result').style.display = 'block';
+                renderTimeline();
+            }
+
+            // 渲染时间线
+            function renderTimeline() {
+                const timelineContainer = document.getElementById('timeline-display');
+                timelineContainer.innerHTML = '';
+
+                if (learningPlan.timeline.length === 0) {
+                    timelineContainer.innerHTML = '<p>暂无时间线数据</p>';
+                    return;
+                }
+
+                let html = '';
+
+                learningPlan.timeline.forEach(item => {
+                    const course = courses.find(c => c.id === item.courseId);
+                    const startDate = new Date(item.startDate).toLocaleDateString();
+                    const endDate = new Date(item.endDate).toLocaleDateString();
+
+                    html += `
+                        <div class="course-item">
+                            <div class="course-info">
+                                <div class="course-title">${course.id}. ${course.name}</div>
+                                <div class="course-english-name">${course.englishName}</div>
+                                <div class="course-progress">
+                                    计划学习时间: ${startDate} - ${endDate} (${item.days}天)
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${course.progress}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                timelineContainer.innerHTML = html;
+            }
+
+            // 保存学习规划
+            function savePlan() {
+                learningPlan.name = document.getElementById('plan-name').value;
+                learningPlan.description = document.getElementById('plan-description').value;
+
+                logActivity({
+                    type: 'plan',
+                    description: `更新了学习规划: ${learningPlan.name}`
+                });
+
+                saveData();
+                alert('学习规划已保存');
+            }
+        </script>
+    </div>
+</body>
+</html>
