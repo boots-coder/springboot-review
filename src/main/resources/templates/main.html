@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<!--<html lang="zh-CN">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习资源商城</title>
+    <style>
+        :root {
+            --primary-color: #3f51b5;
+            --secondary-color: #ff4081;
+            --dark-color: #303030;
+            --light-color: #f5f5f5;
+            --gray-color: #9e9e9e;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-info a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .user-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 10px;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-btn {
+            margin-left: 15px;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .nav-btn i {
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+        }
+
+        .cart-btn {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+        }
+
+        .main-nav {
+            background-color: #f8f8f8;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-list li {
+            padding: 12px 20px;
+            position: relative;
+        }
+
+        .nav-list li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .nav-list a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .dropdown-icon {
+            font-size: 0.7rem;
+            margin-left: 3px;
+        }
+
+        /* 移动端菜单按钮 */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            padding: 20px 0;
+        }
+
+        /* 轮播图 */
+        .banner {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .banner-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+        }
+
+        .banner-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .banner-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        /* 分类导航 */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .category-card p {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        /* 产品列表 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 5px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 160px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+            font-size: 2rem;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            color: var(--gray-color);
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            height: 40px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .current-price {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .original-price {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .discount {
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: auto;
+        }
+
+        .product-action {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            padding: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .add-to-cart:hover {
+            background-color: #303f9f;
+        }
+
+        .add-to-wishlist {
+            width: 36px;
+            margin-left: 8px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+
+        .add-to-wishlist:hover {
+            background-color: #e0e0e0;
+            color: var(--danger-color);
+        }
+
+        /* 特色区域 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(63, 81, 181, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        .feature-text h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+
+        /* 推荐专栏 */
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .recommendation-card {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .rec-img {
+            width: 120px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+            font-size: 2rem;
+        }
+
+        .rec-info {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rec-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .rec-description {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .rec-price {
+            margin-top: auto;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .rec-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            align-self: flex-start;
+        }
+
+        /* 底部信息 */
+        .footer {
+            background-color: white;
+            border-top: 1px solid #eee;
+            padding: 40px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .contact-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-btn {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            width: 32px;
+            height: 32px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #eee;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .recommendations {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+
+            .nav-list.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .search-container {
+                margin: 0 10px;
+                max-width: unset;
+            }
+
+            .recommendations .recommendation-card {
+                flex-direction: column;
+            }
+
+            .recommendations .rec-img {
+                width: 100%;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .search-container {
+                order: 3;
+                width: 100%;
+                margin: 10px 0 0;
+                max-width: none;
+            }
+
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .product-img {
+                height: 120px;
+            }
+
+            .banner-text h2 {
+                font-size: 1.3rem;
+            }
+
+            .category-card {
+                padding: 10px;
+            }
+
+            .category-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 头部区域 -->
+<!-- 顶部信息栏 - 简化版 -->
+<div class="top-bar">
+    <div class="container">
+        <div class="contact-info">
+            <a href="tel:4008001234">📞 400-800-1234</a>
+            <a href="mailto:service@example.com">📧 service@example.com</a>
+        </div>
+        <div class="user-links">
+            <!-- 使用 Spring Security 的 isAuthenticated 判断 -->
+            <div sec:authorize="isAuthenticated()">
+                <!-- 已登录状态 -->
+                <span>欢迎, <a th:href="@{/user/profile}" sec:authentication="name">用户名</a></span>
+                <form th:action="@{/logout}" method="post" style="display:inline;">
+                    <button type="submit" style="background:none; border:none; color:blue; text-decoration:underline; cursor:pointer; padding:0;">退出登录</button>
+                </form>
+            </div>
+            <div sec:authorize="!isAuthenticated()">
+                <!-- 未登录状态 -->
+                <a th:href="@{/login.html}">登录</a>
+                <a th:href="@{/register.html}">注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- 导航栏 -->
+    <div class="container">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                📚 <span>学习资源商城</span>
+            </a>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索课程、资料、教材...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <div class="nav-right">
+                <a href="#" class="nav-btn">
+                    <i>👤</i>
+                    <span>我的</span>
+                </a>
+                <a href="#" class="nav-btn cart-btn">
+                    <i>🛒</i>
+                    <span>购物车</span>
+                    <div class="cart-count">3</div>
+                </a>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主导航菜单 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">精品课程 <span class="dropdown-icon">▼</span></a></li>
+                <li><a href="#">学习资料 <span class="dropdown-icon">▼</span></a></li>
+                <li><a href="#">考试专区 <span class="dropdown-icon">▼</span></a></li>
+                <li><a href="#">学习工具</a></li>
+                <li><a href="#">教材教辅</a></li>
+                <li><a href="#">限时特惠</a></li>
+                <li><a href="#">新品上架</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- 主内容区域 -->
+<main class="main-content">
+    <div class="container">
+        <!-- 轮播图 -->
+        <div class="banner">
+            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22300%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20fill%3D%22%233f51b5%22%20width%3D%22900%22%20height%3D%22300%22%20%2F%3E%3Ctext%20fill%3D%22rgba(255%2C255%2C255%2C0.5)%22%20font-family%3D%22sans-serif%22%20font-size%3D%2230%22%20dy%3D%22.3em%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3E900%C3%97300%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Banner">
+            <div class="banner-text">
+                <h2>2025年高效学习资源上新</h2>
+                <p>精选各学科学习资料，助力提升学习效率</p>
+                <a href="#" class="banner-btn">立即查看</a>
+            </div>
+        </div>
+
+        <!-- 分类导航 -->
+        <div class="categories">
+            <div class="category-card">
+                <div class="category-icon">📊</div>
+                <h3>精品课程</h3>
+                <p>1000+ 课程</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📝</div>
+                <h3>考试资料</h3>
+                <p>500+ 资料</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🎓</div>
+                <h3>学习教程</h3>
+                <p>300+ 教程</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📚</div>
+                <h3>教材教辅</h3>
+                <p>800+ 图书</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🧩</div>
+                <h3>学习工具</h3>
+                <p>100+ 工具</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🎯</div>
+                <h3>学习规划</h3>
+                <p>50+ 方案</p>
+            </div>
+        </div>
+
+        <!-- 热门推荐 -->
+        <div class="section-header">
+            <h2 class="section-title">热门推荐</h2>
+            <a href="#" class="view-all">查看全部 ></a>
+        </div>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">精品课程</div>
+                    <div class="product-title">高效学习方法与时间管理课程</div>
+                    <div class="product-rating">★★★★★ (256)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥199</span>
+                        <span class="original-price">¥299</span>
+                        <span class="discount">33%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">考试资料</div>
+                    <div class="product-title">2025年考研数学完整资料包</div>
+                    <div class="product-rating">★★★★☆ (185)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥149</span>
+                        <span class="original-price">¥259</span>
+                        <span class="discount">42%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">教材教辅</div>
+                    <div class="product-title">高中物理全套解题思路与技巧</div>
+                    <div class="product-rating">★★★★★ (132)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥89</span>
+                        <span class="original-price">¥129</span>
+                        <span class="discount">31%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">学习工具</div>
+                    <div class="product-title">思维导图制作工具高级版</div>
+                    <div class="product-rating">★★★★☆ (98)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥199</span>
+                        <span class="original-price">¥299</span>
+                        <span class="discount">33%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 特色服务 -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-text">
+                    <h3>15天内无理由退款</h3>
+                    <p>不满意可申请退款</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💯</div>
+                <div class="feature-text">
+                    <h3>优质资源保证</h3>
+                    <p>专业团队严格筛选</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-text">
+                    <h3>安全支付</h3>
+                    <p>多种支付方式</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <div class="feature-text">
+                    <h3>7x24小时服务</h3>
+                    <p>随时为您解答</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新品上架 -->
+        <div class="section-header">
+            <h2 class="section-title">新品上架</h2>
+            <a href="#" class="view-all">查看全部 ></a>
+        </div>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">精品课程</div>
+                    <div class="product-title">Python编程从入门到精通视频教程</div>
+                    <div class="product-rating">★★★★★ (56)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥299</span>
+                        <span class="original-price">¥399</span>
+                        <span class="discount">25%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">学习资料</div>
+                    <div class="product-title">英语四六级词汇记忆法与习题集</div>
+                    <div class="product-rating">★★★★☆ (42)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥79</span>
+                        <span class="original-price">¥129</span>
+                        <span class="discount">39%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">教材教辅</div>
+                    <div class="product-title">初中语文阅读理解技巧与范文精选</div>
+                    <div class="product-rating">★★★★★ (78)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥59</span>
+                        <span class="original-price">¥99</span>
+                        <span class="discount">40%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">学习规划</div>
+                    <div class="product-title">高中三年学习规划与目标管理体系</div>
+                    <div class="product-rating">★★★★☆ (62)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥129</span>
+                        <span class="original-price">¥199</span>
+                        <span class="discount">35%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 推荐专栏 -->
+        <div class="section-header">
+            <h2 class="section-title">精选专栏</h2>
+            <a href="#" class="view-all">查看全部 ></a>
+        </div>
+
+        <div class="recommendations">
+            <div class="recommendation-card">
+                <div class="rec-img">图片占位</div>
+                <div class="rec-info">
+                    <h3 class="rec-title">考研备考全科资料包</h3>
+                    <p class="rec-description">包含政治、英语、数学、专业课全套资料，历年真题解析和应试技巧。助你轻松备战考研！</p>
+                    <div class="rec-price">¥399</div>
+                    <a href="#" class="rec-btn">立即查看</a>
+                </div>
+            </div>
+
+            <div class="recommendation-card">
+                <div class="rec-img">图片占位</div>
+                <div class="rec-info">
+                    <h3 class="rec-title">编程语言学习系列课程</h3>
+                    <p class="rec-description">从零基础到高级应用，涵盖Python、Java、C++等多种主流编程语言的完整学习路径。</p>
+                    <div class="rec-price">¥599</div>
+                    <a href="#" class="rec-btn">立即查看</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 限时特惠 -->
+        <div class="section-header">
+            <h2 class="section-title">限时特惠</h2>
+            <a href="#" class="view-all">查看全部 ></a>
+        </div>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">精品课程</div>
+                    <div class="product-title">职场沟通与演讲技巧实战课程</div>
+                    <div class="product-rating">★★★★★ (176)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥99</span>
+                        <span class="original-price">¥299</span>
+                        <span class="discount">67%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">学习资料</div>
+                    <div class="product-title">雅思托福备考全套资料库</div>
+                    <div class="product-rating">★★★★☆ (143)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥149</span>
+                        <span class="original-price">¥399</span>
+                        <span class="discount">63%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">教材教辅</div>
+                    <div class="product-title">高中数学竞赛辅导教材与题库</div>
+                    <div class="product-rating">★★★★★ (98)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥79</span>
+                        <span class="original-price">¥199</span>
+                        <span class="discount">60%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">图片占位</div>
+                <div class="product-info">
+                    <div class="product-category">学习工具</div>
+                    <div class="product-title">学习效率提升工具套装</div>
+                    <div class="product-rating">★★★★☆ (87)</div>
+                    <div class="product-price">
+                        <span class="current-price">¥159</span>
+                        <span class="original-price">¥399</span>
+                        <span class="discount">60%</span>
+                    </div>
+                    <div class="product-action">
+                        <button class="add-to-cart">加入购物车</button>
+                        <button class="add-to-wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- 底部区域 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul class="footer-links">
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">团队介绍</a></li>
+                    <li><a href="#">师资力量</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>商品分类</h3>
+                <ul class="footer-links">
+                    <li><a href="#">精品课程</a></li>
+                    <li><a href="#">学习资料</a></li>
+                    <li><a href="#">考试专区</a></li>
+                    <li><a href="#">学习工具</a></li>
+                    <li><a href="#">教材教辅</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>客户服务</h3>
+                <ul class="footer-links">
+                    <li><a href="#">购物指南</a></li>
+                    <li><a href="#">支付方式</a></li>
+                    <li><a href="#">售后政策</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>联系我们</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>客服热线: 400-800-1234</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>邮箱: service@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🕓</span>
+                    <span>工作时间: 09:00-18:00</span>
+                </div>
+                <h3>订阅资讯</h3>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="请输入您的邮箱">
+                    <button type="submit" class="newsletter-btn">订阅</button>
+                </form>
+                <div class="social-links">
+                    <a href="#" class="social-btn">微</a>
+                    <a href="#" class="social-btn">微</a>
+                    <a href="#" class="social-btn">抖</a>
+                    <a href="#" class="social-btn">B</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 学习资源商城 版权所有 | 备案号：ICP备123456号</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 移动端菜单切换
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-list').classList.toggle('show');
+    });
+
+    // 添加到购物车功能
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const productTitle = productCard.querySelector('.product-title').textContent;
+
+            // 更新购物车数量
+            const cartCount = document.querySelector('.cart-count');
+            cartCount.textContent = parseInt(cartCount.textContent) + 1;
+
+            // 显示添加成功消息
+            alert(`已将"${productTitle}"添加到购物车`);
+        });
+    });
+
+    // 添加到收藏功能
+    document.querySelectorAll('.add-to-wishlist').forEach(button => {
+        button.addEventListener('click', function() {
+            this.innerHTML = '❤';
+            this.style.color = '#f44336';
+
+            const productCard = this.closest('.product-card');
+            const productTitle = productCard.querySelector('.product-title').textContent;
+
+            // 显示添加成功消息
+            alert(`已将"${productTitle}"添加到收藏`);
+        });
+    });
+</script>
+</body>
+</html>

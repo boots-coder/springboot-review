@@ -6,6 +6,7 @@
 //
 //@Controller
 //public class PageController {
+//
 //    @RequestMapping("/{page}")
 //    public String showPage(@PathVariable String page){
 //        return page;

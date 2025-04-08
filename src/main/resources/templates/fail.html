@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录失败</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .error-icon {
+            font-size: 60px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            text-align: center;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        .back-btn {
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #444;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="error-icon">✕</div>
+    <h1>登录失败</h1>
+    <p class="error-msg">用户名或密码错误，请重新输入。</p>
+    <a href="/bootscoder/login.html" class="back-btn">返回登录</a>
+</div>
+</body>
+</html>
